@@ -1,4 +1,4 @@
-![thumb](https://user-images.githubusercontent.com/48758770/112897494-fa841900-90df-11eb-8b88-1829b1d44776.png)
+![thumb](https://cdn.discordapp.com/attachments/822901599847317524/826504252922003507/unknown.png)
 # Anti-Cursed-Darkness-Squad-BETA
 Cloudflare UAM, Captcha & JS Challenge Bypass<br>BlazingFast Bypass<br>OVH UAM Bypass<br>DDOS Guard (js) Bypass<br>Strong DDOS Layer 7<br>Private Tool<br><br>
 
