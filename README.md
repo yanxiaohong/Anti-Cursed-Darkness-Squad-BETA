@@ -5,7 +5,4 @@ Cloudflare UAM, Captcha & JS Challenge Bypass<br>BlazingFast Bypass<br>OVH UAM B
 <br><p>We are not responsable for what u do with this tool.
 
 # Installation
-<code>chmod +x installer</code><br>
-<code>./installer</code><br>
-<code>chmod +x menu</code><br>
-<code>./menu</code><br>
+Instructions on www.scorpion-hackz.com/projects/acds
