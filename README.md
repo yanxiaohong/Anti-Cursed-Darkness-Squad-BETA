@@ -5,23 +5,12 @@ Cloudflare UAM, Captcha & JS Challenge Bypass<br>BlazingFast Bypass<br>OVH UAM B
 <br><p>We are not responsable for what u do with this tool.
 
 # Installation
-JS:
-fs<br>
-cluster<br>
-zombie<br>
-random-useragent<br>
-url<br>
-crypto-random-string<br>
-path<br>
-clouflare-bypasser<br>
-net<br>
-request<br>
-requests<br>
-cloudscraper<br>
+Open software with:<br>
+<code>chmod +x darkness</code><br>
+<code>./darkness</code><br>
 
-Py3:
-colorama<br>
-requests<br>
-
-P2:
-requests<br>
+Type everytime u open ./darkness these commands to update proxy-net:<br>
+<code>proxy-crawl</code><br>
+<br>
+At the first time ever u open it run:<br>
+install
