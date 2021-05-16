@@ -6,7 +6,7 @@
 import os
 import sys
 
-os.system('sudo su')
+
 os.system('sudo apt update')
 os.system('sudo apt install nodejs')
 os.system('sudo apt install npm')
@@ -28,5 +28,7 @@ os.system('sudo npm install zombie')
 os.system('sudo npm install cloudscraper')
 os.system('pip3 install requests')
 os.system('pip3 install colorama')
+
+os.system('sudo apt install perl')
 
 print("Installed")
