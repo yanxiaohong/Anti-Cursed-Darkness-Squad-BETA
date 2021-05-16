@@ -5,4 +5,23 @@ Cloudflare UAM, Captcha & JS Challenge Bypass<br>BlazingFast Bypass<br>OVH UAM B
 <br><p>We are not responsable for what u do with this tool.
 
 # Installation
-Instructions on www.scorpion-hackz.com/projects/acds & run <code>python3 installer.py</code>
+JS:
+fs
+cluster
+zombie
+random-useragent
+url
+crypto-random-string
+path
+clouflare-bypasser
+net
+request
+requests
+cloudscraper
+
+Py3:
+colorama
+requests
+
+P2:
+requests
