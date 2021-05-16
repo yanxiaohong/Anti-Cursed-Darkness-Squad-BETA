@@ -6,8 +6,6 @@ import os
 import getpass
 from datetime import date
 import requests as r
-import pyarmor
-
 
 
 
