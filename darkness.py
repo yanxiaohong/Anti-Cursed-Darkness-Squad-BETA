@@ -2,7 +2,6 @@
 # usr/env/bin/python3.6
 import colorama
 import sys
-import pyarmor
 import os
 import getpass
 from datetime import date
