@@ -6,22 +6,22 @@ Cloudflare UAM, Captcha & JS Challenge Bypass<br>BlazingFast Bypass<br>OVH UAM B
 
 # Installation
 JS:
-fs
-cluster
-zombie
-random-useragent
-url
-crypto-random-string
-path
-clouflare-bypasser
-net
-request
-requests
-cloudscraper
+fs<br>
+cluster<br>
+zombie<br>
+random-useragent<br>
+url<br>
+crypto-random-string<br>
+path<br>
+clouflare-bypasser<br>
+net<br>
+request<br>
+requests<br>
+cloudscraper<br>
 
 Py3:
-colorama
-requests
+colorama<br>
+requests<br>
 
 P2:
-requests
+requests<br>
