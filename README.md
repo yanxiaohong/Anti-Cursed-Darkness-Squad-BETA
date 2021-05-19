@@ -5,17 +5,17 @@ Cloudflare UAM, Captcha & JS Challenge Bypass<br>BlazingFast Bypass<br>OVH UAM B
 <br><p>We are not responsable for what u do with this tool.
 
 # Installation
-    <code>sudo apt update</code><br>
-    <code>sudo apt install perl</code><br>
-    <code>sudo apt install python3</code><br>
-    <code>sudo apt install python3-pip</code><br>
-    <code>sudo apt install python-minimal</code><br>
-    <code>pip2 install -r requirements.txt</code><br>
-    <code>pip3 install -r requirements.txt</code><br>
-    <code>sudo apt install nodejs</code><br>
-    <code>sudo apt install npm</code><br>
-    <code>npm install</code><br>
-    <code></code><br>
+    sudo apt update<br>
+    sudo apt install perl<br>
+    sudo apt install python3<br>
+    sudo apt install python3-pip<br>
+    sudo apt install python-minimal<br>
+    pip2 install -r requirements.txt<br>
+    pip3 install -r requirements.txt<br>
+    sudo apt install nodejs<br>
+    sudo apt install npm<br>
+    npm install<br>
+    
     <code>python3 darkness.py</code><br><br>
 
 # Instructions
