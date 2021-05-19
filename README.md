@@ -5,6 +5,8 @@ Cloudflare UAM, Captcha & JS Challenge Bypass<br>BlazingFast Bypass<br>OVH UAM B
 <br><p>We are not responsable for what u do with this tool.
 
 # Installation
+    <code>sudo apt update</code><br>
+    <code>sudo apt install perl</code><br>
   <code>sudo apt install python3</code><br>
   <code>sudo apt install python3-pip</code><br>
   <code>sudo apt install python-minimal</code><br>
