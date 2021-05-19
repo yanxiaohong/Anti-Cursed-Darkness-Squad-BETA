@@ -5,18 +5,23 @@ Cloudflare UAM, Captcha & JS Challenge Bypass<br>BlazingFast Bypass<br>OVH UAM B
 <br><p>We are not responsable for what u do with this tool.
 
 # Installation
-    sudo apt update<br>
-    sudo apt install perl<br>
-    sudo apt install python3<br>
-    sudo apt install python3-pip<br>
-    sudo apt install python-minimal<br>
-    pip2 install -r requirements.txt<br>
-    pip3 install -r requirements.txt<br>
-    sudo apt install nodejs<br>
-    sudo apt install npm<br>
-    npm install<br>
+    sudo apt update
+    sudo apt install perl
+    sudo apt install python3
+    sudo apt install python3-pip
+    sudo apt install python-minimal
+    pip2 install -r requirements.txt
+    pip3 install -r requirements.txt
+    sudo apt install nodejs
+    sudo apt install npm
+    npm install
     
-    <code>python3 darkness.py</code><br><br>
+    To run after installation:
+    python3 darkness.py
+    
+    Please enter command "proxy-crawl" at beginning to grab new updated proxies!
+    
+    We recommend using 16gb ram , 1-10 GBPS machine to have the good power! 
 
 # Instructions
 https://github.com/Z3NTL3/Anti-Cursed-Darkness-Squad-BETA/releases/tag/3.0<br>
