@@ -5,12 +5,16 @@ Cloudflare UAM, Captcha & JS Challenge Bypass<br>BlazingFast Bypass<br>OVH UAM B
 <br><p>We are not responsable for what u do with this tool.
 
 # Installation
-Open software with:<br>
-<code>chmod +x darkness</code><br>
-<code>./darkness</code><br>
+  <code>sudo apt install python3</code><br>
+  <code>sudo apt install python3-pip</code><br>
+  <code>sudo apt install python-minimal</code><br>
+  <code>pip2 install -r requirements.txt</code><br>
+  <code>pip3 install -r requirements.txt</code><br>
+  <code>sudo apt install nodejs</code><br>
+  <code>sudo apt install npm</code><br>
+  <code>npm install</code><br>
+  <code></code><br>
+  <code>python3 darkness.py</code><br><br>
 
-Type everytime u open ./darkness these commands to update proxy-net:<br>
-<code>proxy-crawl</code><br>
-<br>
-At the first time ever u open it run:<br>
-install
+  --> Updated:<br>
+  Fixed all methods
