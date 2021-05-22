@@ -24,6 +24,7 @@ Cloudflare UAM, Captcha & JS Challenge Bypass<br>BlazingFast Bypass<br>OVH UAM B
     npm install requests
     npm install request
     npm install eval
+    npm install cluster
     
     To run after installation:
     python3 darkness.py
