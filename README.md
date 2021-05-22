@@ -14,7 +14,16 @@ Cloudflare UAM, Captcha & JS Challenge Bypass<br>BlazingFast Bypass<br>OVH UAM B
     pip3 install -r requirements.txt
     sudo apt install nodejs
     sudo apt install npm
-    npm install
+    npm install cloudscraper
+    npm install zombie
+    npm install url
+    npm install fs
+    npm install crypto-random-string
+    npm install random-string
+    npm install cloudflare-bypasser
+    npm install requests
+    npm install request
+    npm install eval
     
     To run after installation:
     python3 darkness.py
