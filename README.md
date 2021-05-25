@@ -36,4 +36,4 @@ Cloudflare UAM, Captcha & JS Challenge Bypass<br>BlazingFast Bypass<br>OVH UAM B
 # Instructions
 https://github.com/Z3NTL3/Anti-Cursed-Darkness-Squad-BETA/releases/tag/3.0<br>
   --> Updated:<br>
-  Fixed all methods
+  Fixed all errors
