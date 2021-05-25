@@ -38,7 +38,7 @@ setInterval(() => {
 Array.prototype.random = function (length) {return this[Math.floor((Math.random()*length))];}
 var color = ['yellow', 'cyan', 'magenta', 'red', 'green', 'blue', 'rainbow']
 var rcolor = color.random(color.length)
-console.log(("DDoS Script Websites by Z3NTL3 Root AND Efdal")[rcolor]);
+console.log(("As Anti-Cursed-Darkness Squad , thanks to Murrez for this script!")[rcolor]);
 });
 
 setTimeout(() => {
