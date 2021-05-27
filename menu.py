@@ -6,7 +6,7 @@ import os
 import getpass
 from datetime import date
 import requests as r
-import pyarmor
+
 
 
 
@@ -109,4 +109,4 @@ while True:
     sys.exit()
   else:
     os.system('chmod +x menu.py')
-    os.system('.python3 menu.py')
+    os.system('python3 menu.py')
