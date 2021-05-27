@@ -47,3 +47,6 @@ Cloudflare UAM, Captcha & JS Challenge Bypass<br>BlazingFast Bypass<br>OVH UAM B
 
 # Fixed
 Fixed every bug on every method :)
+    
+# Updated
+Added a powerful 10gbps ip spoofer method.
