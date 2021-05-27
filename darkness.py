@@ -33,6 +33,7 @@ developer = f"""
 \033[31m>>> \033[96mMethod developers:\033[39m 
 \033[32m\033[1m# \033[0mR00tS3c
 \033[32m\033[1m# \033[0mMürrez
+\033[32m\033[1m# \033[0mRELAX
 """
 
 space = "          "
