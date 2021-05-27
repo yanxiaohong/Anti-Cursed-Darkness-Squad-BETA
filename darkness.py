@@ -266,3 +266,7 @@ while True:
         print(f"\033[31m>>> \033[39mError-Fetch \033[31m: \033[36m Wrong option.\n")
         os.system('python3 menu.py')
         sys.exit()
+        
+        
+# Panel by z3ntl3 root
+# Methods by R00tS3C and Murrez
