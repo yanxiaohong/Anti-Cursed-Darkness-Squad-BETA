@@ -50,3 +50,5 @@ Fixed every bug on every method :)
     
 # Updated
 Added a powerful 10gbps ip spoofer method.
+<br>
+<p>See: https://github.com/Z3NTL3/Anti-Cursed-Darkness-Squad-BETA/releases/tag/4.0
