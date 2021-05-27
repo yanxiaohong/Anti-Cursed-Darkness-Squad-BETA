@@ -8,7 +8,12 @@ from datetime import date
 import requests as r
 
 #ingilizce versiyonu
-
+crawlPROXYHTTP1 =  r.get("https://api.proxyscrape.com/?request=displayproxies&proxytype=http&timeout=7000")
+textPROXIES1 = (crawlPROXYHTTP1.text)
+    with open('proxies.txt', 'x') as file:
+        file.write(str(textPROXIES1))
+        file.write('\n')
+        
 os.system('chmod +x menu.py')
 os.system('clear')
 
