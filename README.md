@@ -5,26 +5,38 @@ Cloudflare UAM, Captcha & JS Challenge Bypass<br>BlazingFast Bypass<br>OVH UAM B
 <br><p>We are not responsable for what u do with this tool.
 
 # Installation
+
+    Go into your Anti-Cursed-Darkness-Squad Installation Folder:
+    --> git clone https://github.com/Z3NTL3/Anti-Cursed-Darkness-Squad-BETA
+    --> cd Anti-Cursed-Darkness-Squad-BETA
+   
+    INSTALLATION
+    
     sudo apt update
-    sudo apt install perl
-    sudo apt install python3
-    sudo apt install python3-pip
-    sudo apt install python-minimal
-    pip2 install -r requirements.txt
-    pip3 install -r requirements.txt
+
+    apt install git
+
     sudo apt install nodejs
     sudo apt install npm
-    npm install cloudscraper
-    npm install zombie
-    npm install url
-    npm install fs
-    npm install crypto-random-string
-    npm install random-string
-    npm install cloudflare-bypasser
-    npm install requests
-    npm install request
-    npm install eval
-    npm install cluster
+
+    sudo npm install cloudflare-bypasser
+    sudo npm install crypto-random-string
+    sudo npm install random-string
+    sudo npm install random-useragent
+    sudo npm install fs
+    sudo npm install url
+    sudo npm install zombie
+    sudo npm install eval
+    sudo npm install cloudscraper
+
+
+    npm install
+
+    sudo apt install python3
+    pip3 install -r requirements.txt
+    sudo apt install python-minimal
+    sudo apt install perl
+
     
     To run after installation:
     python3 darkness.py
@@ -33,7 +45,5 @@ Cloudflare UAM, Captcha & JS Challenge Bypass<br>BlazingFast Bypass<br>OVH UAM B
     
     We recommend using 16gb ram , 1-10 GBPS machine to have the good power! 
 
-# Instructions
-https://github.com/Z3NTL3/Anti-Cursed-Darkness-Squad-BETA/releases/tag/3.0<br>
-  --> Updated:<br>
-  Fixed all errors
+# Fixed
+Fixed every bug on every method :)
