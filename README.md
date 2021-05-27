@@ -28,8 +28,6 @@ Cloudflare UAM, Captcha & JS Challenge Bypass<br>BlazingFast Bypass<br>OVH UAM B
     sudo npm install zombie
     sudo npm install eval
     sudo npm install cloudscraper
-
-
     npm install
 
     sudo apt install python3
