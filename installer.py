@@ -23,7 +23,8 @@ os.system('sudo apt install python3')
 os.system('pip3 install -r requirements.txt')
 os.system('sudo apt install python-minimal')
 os.system('sudo apt install perl')
-
+os.system('chmod +x darkness')
+os.system('./darkness')
 
 print("\n\n")
 print("If this didn't work, then install it manual. See readme.md for instructions")
