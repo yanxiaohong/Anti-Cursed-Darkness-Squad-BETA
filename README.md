@@ -20,7 +20,7 @@ Cloudflare UAM, Captcha & JS Challenge Bypass<br>BlazingFast Bypass<br>OVH UAM B
     chmod +x darkness
     ./darkness
     
-    Please enter command "proxy-crawl" at beginning to grab new updated proxies!
+    When proxies banned, then renew it by "proxy-crawl" command.
     
     We recommend using 16gb ram , 1-10 GBPS machine to have the good power! 
 
