@@ -3,14 +3,14 @@ import sys
 
 print("Open this installer only in where your Anti-Cursed-Darkness-Squad-BETA is installed!")
 
-sure = input("You sure that you are in the correct folder? Press enter to start installation: )
+sure = input("You sure that you are in the correct folder? Press enter to start installation: ")
 
 os.system('sudo apt update')
 os.system('apt install git')
 os.system('sudo apt install nodejs')
 os.system('sudo apt install npm')
 os.system('sudo npm install cloudflare-bypasser')
-os.system(sudo npm install crypto-random-string'')
+os.system('sudo npm install crypto-random-string')
 os.system('sudo npm install random-string')
 os.system('sudo npm install random-useragent')
 os.system('sudo npm install fs')
