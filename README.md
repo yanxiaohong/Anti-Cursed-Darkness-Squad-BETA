@@ -2,6 +2,7 @@
 # Anti-Cursed-Darkness-Squad v4.0
 Cloudflare UAM, Captcha & JS Challenge Bypass<br>BlazingFast Bypass<br>OVH UAM Bypass<br>DDOS Guard (js) Bypass<br>Strong DDOS Layer 7<br>Private Tool<br><br><p> Thanks to R00tS3c  and Murrez for their tools. This tool is an one-in-all DDOS Tool with the best scripts. Only the panel it self coded by z3ntl3 root. Others are not part of our code!
 
+<p> NOTICE: When proxies banned, then renew it by "proxy-crawl" command.</p>
 <br><p>We are not responsable for what u do with this tool.
 
 # Installation
