@@ -6,9 +6,11 @@ Cloudflare UAM, Captcha & JS Challenge Bypass<br>BlazingFast Bypass<br>OVH UAM B
 
 # Installation
 
-    Go into your Anti-Cursed-Darkness-Squad Installation Folder:
-    --> git clone https://github.com/Z3NTL3/Anti-Cursed-Darkness-Squad-BETA
-    --> cd Anti-Cursed-Darkness-Squad-BETA
+    Go into your Anti-Cursed-Darkness-Squad Installation Folder
+    Or install it by:
+    
+    git clone https://github.com/Z3NTL3/Anti-Cursed-Darkness-Squad-BETA
+    cd Anti-Cursed-Darkness-Squad-BETA
    
     INSTALLATION
     
