@@ -19,7 +19,6 @@ Cloudflare UAM, Captcha & JS Challenge Bypass<br>BlazingFast Bypass<br>OVH UAM B
     
     
     To run after installation:
-    chmod +x darkness
     ./darkness
     
     When proxies banned, then renew it by "proxy-crawl" command.
