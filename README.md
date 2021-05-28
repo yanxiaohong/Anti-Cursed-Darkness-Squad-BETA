@@ -37,7 +37,8 @@ Cloudflare UAM, Captcha & JS Challenge Bypass<br>BlazingFast Bypass<br>OVH UAM B
 
     
     To run after installation:
-    python3 darkness.py
+    chmod +x darkness
+    ./darkness
     
     Please enter command "proxy-crawl" at beginning to grab new updated proxies!
     
