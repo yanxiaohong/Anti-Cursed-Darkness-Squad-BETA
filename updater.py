@@ -109,7 +109,7 @@ print("\033[31m>>> \033[96mSuccesfully updated!\033[39m ")
 
 opening = input(indicatorlogo + 'I will open darkness!, press enter to enter to the panel: ')
 os.system('chmod +x darkness')
-os.system('darkness')
+os.system('./darkness')
 sys.exit()
 
 
