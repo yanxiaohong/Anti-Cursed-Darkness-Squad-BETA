@@ -1,9 +1,6 @@
 import os
 import sys
 
-print("Open this installer only in where your Anti-Cursed-Darkness-Squad-BETA is installed!")
-
-sure = input("You sure that you are in the correct folder? Press enter to start installation: ")
 
 os.system('sudo apt update')
 os.system('apt install git')
@@ -26,5 +23,3 @@ os.system('sudo apt install perl')
 os.system('chmod +x darkness')
 os.system('./darkness')
 
-print("\n\n")
-print("If this didn't work, then install it manual. See readme.md for instructions")
