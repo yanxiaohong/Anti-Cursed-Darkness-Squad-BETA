@@ -5,6 +5,10 @@ Cloudflare UAM, Captcha & JS Challenge Bypass<br>BlazingFast Bypass<br>OVH UAM B
 <p> NOTICE: When proxies banned, then renew it by "proxy-crawl" command.</p>
 <br><p>We are not responsable for what u do with this tool.
 
+# Proofs
+<p> Atom Stresser Downed: https://www.youtube.com/watch?v=UyQ_hEFnsBg</p>
+<p> Dos Ninja Stresser Downed: https://www.youtube.com/watch?v=_BPUP68Xqag&t=23s</p>
+<p> Turk Hack Team Downed: https://www.youtube.com/watch?v=pqlYKMa0Q5I</p>
 # Installation
 
     Go into your Anti-Cursed-Darkness-Squad Installation Folder
@@ -29,6 +33,7 @@ Cloudflare UAM, Captcha & JS Challenge Bypass<br>BlazingFast Bypass<br>OVH UAM B
     When proxies banned, then renew it by "proxy-crawl" command.
     
     We recommend using 16gb ram , 1-10 GBPS machine to have the good power! 
+
 
 # Fixed
 Fixed every bug on every method :)
