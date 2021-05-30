@@ -17,6 +17,10 @@ Cloudflare UAM, Captcha & JS Challenge Bypass<br>BlazingFast Bypass<br>OVH UAM B
     
     sudo apt install python3
     python3 installer.py
+ 
+    ERROR FIX:
+    chmod +x
+    ./fixer
     
     
     To run after installation:
