@@ -1,6 +1,6 @@
 ![GitHub Logo](https://cdn.discordapp.com/attachments/716776722070110291/848289725471391854/20210529_220005.jpg)<br>
 # Anti-Cursed-Darkness-Squad v4.2
-Cloudflare UAM, Captcha & JS Challenge Bypass<br>BlazingFast Bypass<br>OVH UAM Bypass<br>DDOS Guard (js) Bypass<br>Strong DDOS Layer 7 & 4<br>Private Tool<br><br><p> Thanks to R00tS3c  and Murrez for their scripts. This tool is an one-in-all DDOS Tool with the best scripts. Only the panel it self and the proxy-crawler is coded by z3ntl3 root. Others are not part of our code!
+Cloudflare UAM, Captcha & JS Challenge Bypass<br>BlazingFast Bypass<br>OVH UAM Bypass<br>DDOS Guard (js) Bypass<br>Strong DDOS Layer 7 & 4<br>Private Tool<br><br><p> Thanks to R00tS3c  and wachirachoomsiri for their scripts. This tool is an one-in-all DDOS Tool with the best scripts. Only the panel it self and the proxy-crawler is coded by z3ntl3 root. Others are not part of our code!
  
 <p> NOTICE: When proxies banned, then renew it by "proxy-crawl" command.</p>
 <br><p>We are not responsable for what u do with this tool.
