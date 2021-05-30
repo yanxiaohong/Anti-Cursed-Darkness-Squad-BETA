@@ -7,7 +7,7 @@ Cloudflare UAM, Captcha & JS Challenge Bypass<br>BlazingFast Bypass<br>OVH UAM B
 
 # Proofs
 <p> Atom Stresser Downed: https://www.youtube.com/watch?v=UyQ_hEFnsBg</p>
-<p> Dos Ninja Stresser Downed: https://www.youtube.com/watch?v=_BPUP68Xqag&t=23s</p>
+<p> Dos Ninja Stresser Downed: https://www.youtube.com/watch?v=_BPUP68Xqag</p>
 <p> Turk Hack Team Downed: https://www.youtube.com/watch?v=pqlYKMa0Q5I</p>
 # Installation
 
