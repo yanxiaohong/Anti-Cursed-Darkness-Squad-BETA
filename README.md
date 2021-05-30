@@ -19,7 +19,7 @@ Cloudflare UAM, Captcha & JS Challenge Bypass<br>BlazingFast Bypass<br>OVH UAM B
     python3 installer.py
  
     ERROR FIX:
-    chmod +x
+    chmod +x fixer
     ./fixer
     
     
