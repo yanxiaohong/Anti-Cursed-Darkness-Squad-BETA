@@ -19,7 +19,7 @@ Cloudflare UAM, Captcha & JS Challenge Bypass<br>BlazingFast Bypass<br>OVH UAM B
     cd Anti-Cursed-Darkness-Squad-BETA
    
     INSTALLATION
-    
+    ulimit -n 99999999
     sudo apt install python3
     python3 installer.py
  
@@ -29,6 +29,7 @@ Cloudflare UAM, Captcha & JS Challenge Bypass<br>BlazingFast Bypass<br>OVH UAM B
     
     
     To run after installation:
+    ulimit -n 99999999
     ./darkness
     
     When proxies banned, then renew it by "proxy-crawl" command.
