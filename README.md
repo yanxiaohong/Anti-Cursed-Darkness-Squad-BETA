@@ -25,12 +25,12 @@ Cloudflare UAM, Captcha & JS Challenge Bypass<br>BlazingFast Bypass<br>OVH UAM B
  
     ERROR FIX:
     chmod +x fixer
-    ./fixer
+    sudo ./fixer
     
     
     To run after installation:
     ulimit -n 999999
-    ./darkness
+    sudo ./darkness
     
     When proxies banned, then renew it by "proxy-crawl" command.
     
