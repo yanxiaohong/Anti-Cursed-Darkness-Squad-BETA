@@ -19,7 +19,7 @@ Cloudflare UAM, Captcha & JS Challenge Bypass<br>BlazingFast Bypass<br>OVH UAM B
     git clone https://github.com/Z3NTL3/Anti-Cursed-Darkness-Squad-BETA
     cd Anti-Cursed-Darkness-Squad-BETA
    
-    INSTALLATION
+    
     ulimit -n 999999
     sudo apt install python3
     python3 installer.py
