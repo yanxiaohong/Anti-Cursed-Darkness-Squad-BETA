@@ -21,5 +21,5 @@ os.system('pip3 install -r requirements.txt')
 os.system('sudo apt install python-minimal')
 os.system('sudo apt install perl')
 os.system('chmod +x darkness')
-os.system('./darkness')
+os.system('sudo ./darkness')
 
