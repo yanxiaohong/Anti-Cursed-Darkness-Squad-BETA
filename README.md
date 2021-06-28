@@ -38,6 +38,6 @@ Cloudflare UAM, Captcha & JS Challenge Bypass<br>BlazingFast Bypass<br>OVH UAM B
     We recommend using 16gb ram , 1-10 GBPS machine to have the good power! 
 
 
-# Fixed
-Fixed every bug on every method :)
+# Updates
+https://scorpion-hackz.com/acds/update-log.txt
   
