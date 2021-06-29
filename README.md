@@ -1,4 +1,4 @@
-![GitHub Logo](https://raw.githubusercontent.com/Z3NTL3/Anti-Cursed-Darkness-Squad-BETA/main/panel.png)<br>
+![GitHub Logo](https://raw.githubusercontent.com/Z3NTL3/Anti-Cursed-Darkness-Squad-BETA/main/menu.png)<br>
 # Anti-Cursed-Darkness-Squad v5
 Cloudflare UAM, Captcha & JS Challenge Bypass<br>BlazingFast Bypass<br>OVH UAM Bypass<br>DDOS Guard (js) Bypass<br>Strong DDOS Layer 7 & 4<br>Private Tool<br><br><p> Thanks to R00tS3c, emp001  and wachirachoomsiri for their scripts. This tool is an one-in-all DDOS Tool with the best scripts. Only the panel it self and the proxy-crawler is coded by z3ntl3 root. Others are not part of our code!
  
