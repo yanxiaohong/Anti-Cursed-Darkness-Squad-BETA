@@ -41,3 +41,6 @@ Cloudflare UAM, Captcha & JS Challenge Bypass<br>BlazingFast Bypass<br>OVH UAM B
 # Updates
 https://scorpion-hackz.com/acds/update-log.txt
   
+# Tip
+<p>darkness.custom : <code>Doesn't crawl automaticly proxies at startup.</code></p>
+<p>darkness : <code>Crawls free proxis at startup.</code></p>
