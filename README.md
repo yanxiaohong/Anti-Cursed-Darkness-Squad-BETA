@@ -43,7 +43,7 @@ https://scorpion-hackz.com/acds/update-log.txt
 
 # darkness.custom installation
 <p>darkness.custom : <code>Doesn't crawl automaticly proxies at startup.</code></p>
-<p>darkness : <code>Crawls free proxis at startup.</code></p>
+<p>darkness : <code>Crawls free proxies at startup.</code></p>
     Go into your Anti-Cursed-Darkness-Squad Installation Folder
     Or install it by:
     
