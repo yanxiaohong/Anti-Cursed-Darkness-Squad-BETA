@@ -40,7 +40,30 @@ Cloudflare UAM, Captcha & JS Challenge Bypass<br>BlazingFast Bypass<br>OVH UAM B
 
 # Updates
 https://scorpion-hackz.com/acds/update-log.txt
-  
-# Tip
+
+# darkness.custom installation
 <p>darkness.custom : <code>Doesn't crawl automaticly proxies at startup.</code></p>
 <p>darkness : <code>Crawls free proxis at startup.</code></p>
+    Go into your Anti-Cursed-Darkness-Squad Installation Folder
+    Or install it by:
+    
+    git clone https://github.com/Z3NTL3/Anti-Cursed-Darkness-Squad-BETA
+    cd Anti-Cursed-Darkness-Squad-BETA
+   
+    
+    ulimit -n 999999
+    sudo apt install python3
+    python3 installer.py
+ 
+    ERROR FIX:
+    chmod +x fixer
+    sudo ./fixer
+    
+    
+    To run after installation:
+    ulimit -n 999999
+    sudo ./darkness.custom
+    
+    When proxies banned, then renew it by "proxy-crawl" command.
+    
+    We recommend using 16gb ram , 1-10 GBPS machine to have the good power! 
