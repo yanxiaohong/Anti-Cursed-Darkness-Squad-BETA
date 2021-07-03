@@ -6,8 +6,11 @@ Cloudflare UAM, Captcha & JS Challenge Bypass<br>BlazingFast Bypass<br>OVH UAM B
 <br><p>We are not responsable for what u do with this tool.
 
 # Proofs
-<p> Hetzner GmbH Server Downed: https://www.youtube.com/watch?v=qzBAXuP7f9I&lc=UgxOhjlE0eg5iyksQ4V4AaABAg
 <p> Rip Stresser Downed: https://www.youtube.com/watch?v=ydAghgWiS2I </p>
+<p> iWantCheats.net Downed: https://www.youtube.com/watch?v=KWBv-ot9weE</p>
+<p> NoviHacks.com Downed: https://www.youtube.com/watch?v=uda7CWAWQlU</p>
+<p> WallHax.com Downed: https://www.youtube.com/watch?v=GSK_YLIsfpU</p>
+<p> Hetzner GmbH Server Downed: https://www.youtube.com/watch?v=qzBAXuP7f9I&lc=UgxOhjlE0eg5iyksQ4V4AaABAg
 <p> Atom Stresser Downed: https://www.youtube.com/watch?v=UyQ_hEFnsBg</p>
 <p> Dos Ninja Stresser Downed: https://www.youtube.com/watch?v=_BPUP68Xqag</p>
 <p> Spy Hackerz Downed: https://www.youtube.com/watch?v=YsrAGwlnM4U</p>
