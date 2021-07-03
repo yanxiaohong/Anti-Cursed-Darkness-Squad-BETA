@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# MH PRO DEV METHODS
 
 l7 = ["CFB", "BYPASS", "GET", "POST", "OVH", "STRESS", "OSTRESS", "DYN", "SLOW", "HEAD", "HIT", "NULL", "COOKIE", "BRUST", "PPS", "EVEN", "GSB", "DGB", "AVB"]
 l4 = ["TCP", "UDP", "SYN", "VSE", "MEM", "NTP"]
@@ -1530,22 +1531,7 @@ def usgeaseets():
 
 def usge():
     usgeaseets()
-    print('* Coded By MH_ProDev For Better Stresser')
-    print('python3 {} <method> <url> <socks_type5.4.1> <threads> <proxylist> <multiple> <timer>\n'.format(sys.argv[0]))
-    print(' > Methods:')
-    print(' - L3')
-    print(' | {} | {} Methods'.format(l3s, len(l3)))
-    print(' - L4')
-    print(' | {} | {} Methods'.format(l4s, len(l4)))
-    print(' - L7')
-    print(' | {} | {} Methods'.format(l7s, len(l7)))
-    print(' - TOOLS')
-    print(' | {} | {} Methods'.format(tos, len(to)))
-    print(' - Other')
-    print(' | {} | {} Methods'.format(ots, len(ot)))
-    print(' - All {} Method \n'.format(len(methodsl)))
-    print(
-        'expmple:\n python3 {} {} {} {} {} {} {} {}'.format(sys.argv[0], metho, url, SOCKST, thr, proxylist, muli, tim))
+    
 
 
 def makefile(text):
