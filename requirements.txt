@@ -1,4 +1,6 @@
 requests
-colorama
-json
-getpass
+pysocks
+socks
+cfscrape
+icmplib
+scapy
