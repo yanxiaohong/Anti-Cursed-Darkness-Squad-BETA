@@ -17,9 +17,11 @@ os.system('sudo npm install eval')
 os.system('sudo npm install cloudscraper')
 os.system('npm install')
 os.system('sudo apt install python3')
+os.system('sudo apt install python3-pip')
 os.system('pip3 install -r requirements.txt')
 os.system('sudo apt install python-minimal')
 os.system('sudo apt install perl')
 os.system('chmod +x darkness')
 os.system('sudo ./darkness')
+
 
