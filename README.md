@@ -1,6 +1,6 @@
-![GitHub Logo](https://cdn.discordapp.com/attachments/837735779304210472/861261013172486144/unknown.png)<br>
+![GitHub Logo](https://cdn.discordapp.com/attachments/858698713816105020/861292797223108608/root.png)<br>
 # Anti-Cursed-Darkness-Squad v7
-Cloudflare UAM, Captcha & JS Challenge Bypass<br>BlazingFast Bypass<br>OVH UAM Bypass<br>DDOS Guard (js) Bypass<br>Strong DDOS Layer 7 & 4<br>Private Tool<br><br><p> Thanks to MHProDev, R00tS3c, emp001  and wachirachoomsiri for their methods. This tool is an one-in-all DDOS Panel with the best methods. Only the panel it self, Turkish network blocker, the proxy-crawler and attack api logger discord webhooks is coded by z3ntl3 root. Others are not part of our code!
+Cloudflare UAM, Captcha & JS Challenge Bypass<br>BlazingFast Bypass<br>OVH UAM Bypass<br>DDOS Guard (js) Bypass<br>Strong DDOS Layer 7 & 4<br>Private Tool<br><br><p> Thanks to MHProDev, R00tS3c, emp001  and wachirachoomsiri for their methods. This tool is an one-in-all DDOS Panel with the best methods. Only the panel it self, functionality, Turkish network blocker, the proxy-crawler and attack api logger discord webhooks is coded by z3ntl3 root. Others are not part of our code!
  
 <p> NOTICE: When proxies banned, then renew it by "proxy-crawl" command.</p>
 <br><p>We are not responsable for what u do with this tool.
