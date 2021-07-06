@@ -146,6 +146,8 @@ modding()
 os.system('clear')
 def proxies():
     try:
+
+        
         os.system('sudo rm -r proxies.txt')
         crawlPROXYHTTP = r.get("https://api.proxyscrape.com/?request=displayproxies&proxytype=http&timeout=7000")
         textPROXIES = (crawlPROXYHTTP.text)
@@ -335,7 +337,7 @@ def tip():
 def license():
     try:
         while True:
-            licensiesystem = (r.get("https://pastebin.com/raw/ME8Y6Vjw").text)
+            licensiesystem = (r.get("https://pastebin.com/raw/hQqhhp9X").text)
             if licensiesystem == "valid":
                 print(f"\033[0m\033[36m┌──\033[36m(\033[31m@root\033[0m\033[31m\033[36m)-[\033[0m\033[39m\033[1m/home/z3ntl3\033[0m\033[36m]\n\033[36m└───\033[31m⮞\033[42m\033[0m\033[96m License: Valid \033[31m[\033[32m\033[1mOnline\033[0m\033[31m] \033[31m+ \033[96mProxies Updated\033[31m!")
                 break
@@ -434,22 +436,44 @@ def menu():
                     print("""
 \033[36m[\033[39mTOOLS.x\033[36m]\033[0m
 
-\033[31m> \033[39mproxy-crawl \033[31m: \033[36m crawl proxies\033[31m[\033[32mRUNNING\033[31m]\033[0m
+\033[31m\033[1m>\033[0m \033[39mproxy-crawl \033[31m: \033[36m crawl proxies\033[31m[\033[32mRUNNING\033[31m]\033[0m
+\033[31m\033[1m>\033[0m \033[39m Option 1: \033[96mProxy Scraper IO Proxies\033[0m
+\033[31m\033[1m>\033[0m \033[39m Option 2: \033[96mProxy List Proxies\033[0m
+
+
     """)
-                    os.system('sudo rm -r proxies.txt')
-                    crawlPROXYHTTP = r.get("https://api.proxyscrape.com/?request=displayproxies&proxytype=http&timeout=7000")
-                    textPROXIES = (crawlPROXYHTTP.text)
-                    with open('proxies.txt', 'x') as file:
-                        file.write(str(textPROXIES))
-                        file.write('\n')
-                        print(indicatorlogo + "Proxies saved in = proxies.txt\n\n")
-                        gobackMENU = input(indicatorlogo + "Go back to menu (y/n):")
-                        if gobackMENU == "n":
-                            sys.exit()
-                        else:
-                            load()
-                            license()
-                            menu()
+                    qbro = input("\033[31m\033[1m>\033[0m \033[96mChoose from the options\033[31m\033[1m:\033[0m\033[96m  ")
+                    if qbro == "1":
+                        os.system('sudo rm -r proxies.txt')
+                        crawlPROXYHTTP = r.get(f"https://api.proxyscrape.com/?request=displayproxies&proxytype=http&timeout=7000")
+                        textPROXIES = (crawlPROXYHTTP.text)
+                        with open('proxies.txt', 'x') as file:
+                            file.write(str(textPROXIES))
+                            file.write('\n')
+                            print(indicatorlogo + "Proxies saved in = proxies.txt\n\n")
+                            gobackMENU = input(indicatorlogo + "Go back to menu (y/n):")
+                            if gobackMENU == "n":
+                                sys.exit()
+                            else:
+                                load()
+                                license()
+                                menu()
+                    if qbro == "2":
+                        os.system('sudo rm -r proxies.txt')
+                        crawlPROXYHTTP = r.get(f"https://www.proxy-list.download/api/v1/get?type=http")
+                        textPROXIES = (crawlPROXYHTTP.text)
+                        with open('proxies.txt', 'x') as file:
+                            file.write(str(textPROXIES))
+                            file.write('\n')
+                            print(indicatorlogo + "Proxies saved in = proxies.txt\n\n")
+                            gobackMENU = input(indicatorlogo + "Go back to menu (y/n):")
+                            if gobackMENU == "n":
+                                sys.exit()
+                            else:
+                                load()
+                                license()
+                                menu()
+
                 if menuoption == "mh-normalbypass":
                     load()
                     print("""
@@ -980,22 +1004,43 @@ def menu():
                 print("""
 \033[36m[\033[39mTOOLS.x\033[36m]\033[0m
 
-\033[31m\033[1m⮞ \033[0m\033[96mproxy-crawl \033[31m: \033[36m crawl proxies\033[31m[\033[32mRUNNING\033[31m]\033[0m
+\033[31m\033[1m>\033[0m \033[39mproxy-crawl \033[31m: \033[36m crawl proxies\033[31m[\033[32mRUNNING\033[31m]\033[0m
+\033[31m\033[1m>\033[0m \033[39m Option 1: \033[96mProxy Scraper IO Proxies\033[0m
+\033[31m\033[1m>\033[0m \033[39m Option 2: \033[96mProxy List Proxies\033[0m
+
+
     """)
-                os.system('sudo rm -r proxies.txt')
-                crawlPROXYHTTP = r.get("https://api.proxyscrape.com/?request=displayproxies&proxytype=http&timeout=7000")
-                textPROXIES = (crawlPROXYHTTP.text)
-                with open('proxies.txt', 'x') as file:
-                    file.write(str(textPROXIES))
-                    file.write('\n')
-                    print(indicatorlogo + "Proxies saved in = proxies.txt\n\n")
-                    gobackMENU = input(indicatorlogo + "Go back to menu (y/n):")
-                    if gobackMENU == "n":
-                        sys.exit()
-                    else:
-                        load()
-                        license()
-                        menu()
+                qbro = input("\033[31m\033[1m>\033[0m \033[96mChoose from the options\033[31m\033[1m:\033[0m\033[96m  ")
+                if qbro == "1":
+                    os.system('sudo rm -r proxies.txt')
+                    crawlPROXYHTTP = r.get(f"https://api.proxyscrape.com/?request=displayproxies&proxytype=http&timeout=7000")
+                    textPROXIES = (crawlPROXYHTTP.text)
+                    with open('proxies.txt', 'x') as file:
+                        file.write(str(textPROXIES))
+                        file.write('\n')
+                        print(indicatorlogo + "Proxies saved in = proxies.txt\n\n")
+                        gobackMENU = input(indicatorlogo + "Go back to menu (y/n):")
+                        if gobackMENU == "n":
+                                sys.exit()
+                        else:
+                            load()
+                            license()
+                            menu()
+                if qbro == "2":
+                    os.system('sudo rm -r proxies.txt')
+                    crawlPROXYHTTP = r.get(f"https://www.proxy-list.download/api/v1/get?type=http")
+                    textPROXIES = (crawlPROXYHTTP.text)
+                    with open('proxies.txt', 'x') as file:
+                        file.write(str(textPROXIES))
+                        file.write('\n')
+                        print(indicatorlogo + "Proxies saved in = proxies.txt\n\n")
+                        gobackMENU = input(indicatorlogo + "Go back to menu (y/n):")
+                        if gobackMENU == "n":
+                            sys.exit()
+                        else:
+                            load()
+                            license()
+                            menu()
             
             if kies == "ultra-bypass":
                 os.system('clear')
