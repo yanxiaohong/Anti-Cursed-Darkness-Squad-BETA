@@ -4,3 +4,7 @@ socks
 cfscrape
 icmplib
 scapy
+colorama
+platform
+psutil
+speedtest-cli
