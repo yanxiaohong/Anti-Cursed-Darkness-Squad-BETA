@@ -353,6 +353,7 @@ def methods():
 \033[31m⮞ \033[96mproxy-crawl
 
 \033[31m[\033[96mLayer 4\033[31m]\033[0m
+\033[31m⮞ \033[96mudp-god
 \033[31m⮞ \033[96mhaven-god
 
 \033[31m[\033[96mLayer7\033[31m]\033[0m
