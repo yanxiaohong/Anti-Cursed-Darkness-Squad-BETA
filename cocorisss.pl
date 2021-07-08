@@ -5,7 +5,7 @@ if ($#ARGV != 1) {
   print " \n";
 
 print "
-         By ./cocorisss
+         By HEX ./cocorisss
 args -> perl cocorisss-UDP.pl IP Time
 ";
 exit(1);
