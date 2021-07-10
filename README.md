@@ -6,7 +6,7 @@ Cloudflare UAM, Captcha & JS Challenge Bypass<br>BlazingFast Bypass<br>OVH UAM B
 <br><p>We are not responsable for what u do with this tool.
 
 # Proofs
-<p> Cracked.to Downed: https://www.youtube.com/watch?v=aLQIPc6butg</p>
+<p> Cracked.to Downed: https://www.yourupload.com/watch/njVEq78NYl26</p>
 <p> Zap Hosting Downed: https://www.youtube.com/watch?v=66gz6YlZDws</p>
 <p> Rip Stresser Downed: https://www.youtube.com/watch?v=ydAghgWiS2I </p>
 <p> iWantCheats.net Downed: https://www.youtube.com/watch?v=KWBv-ot9weE</p>
