@@ -1,4 +1,4 @@
-![GitHub Logo](https://cdn.discordapp.com/attachments/837735779304210472/863448953059672064/menu.png)<br>
+![GitHub Logo](https://raw.githubusercontent.com/Z3NTL3/Anti-Cursed-Darkness-Squad-BETA/main/putty.png)<br>
 # Anti-Cursed-Darkness-Squad v7
 Powerful Layer 7 & 4 panel. 
  
