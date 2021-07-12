@@ -19,6 +19,11 @@ Thanks to MHProDev, Leeon123, R00tS3c, emp001, cocorisss  and wachirachoomsiri f
 <p> Dos Ninja Stresser Downed: https://www.youtube.com/watch?v=_BPUP68Xqag</p>
 <p> Spy Hackerz Downed: https://www.youtube.com/watch?v=YsrAGwlnM4U</p>
 <p> Turk Hack Team Downed: https://www.youtube.com/watch?v=pqlYKMa0Q5I</p>
+# Methods
+![image](https://user-images.githubusercontent.com/48758770/125307020-fba82180-e32f-11eb-84a9-60cd852aacc1.png)
+<br><br>
+Thanks to MHProDev, Leeon123, R00tS3c, emp001, cocorisss  and wachirachoomsiri for their methods. This tool is an one-in-all DDOS Panel with the best methods. Only the panel it self, functionality, Turkish network blocker, the proxy-crawler and attack api logger discord webhooks is coded by z3ntl3 root. Others are not part of our code!
+
 # Installation
 
     Go into your Anti-Cursed-Darkness-Squad Installation Folder
