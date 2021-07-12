@@ -8,7 +8,7 @@ Thanks to MHProDev, Leeon123, R00tS3c, emp001, cocorisss  and wachirachoomsiri f
 <br><p>We are not responsable for what u do with this tool.
 
 # Proofs
-<p> Cracked.to Downed: https://www.yourupload.com/watch/6670ho1R3IX2</p>
+<p> Cracked.to Downed: https://streamable.com/d2l85r</p>
 <p> Zap Hosting Downed: https://www.youtube.com/watch?v=66gz6YlZDws</p>
 <p> Rip Stresser Downed: https://www.youtube.com/watch?v=ydAghgWiS2I </p>
 <p> iWantCheats.net Downed: https://www.youtube.com/watch?v=KWBv-ot9weE</p>
