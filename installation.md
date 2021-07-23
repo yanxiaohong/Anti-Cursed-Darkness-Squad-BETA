@@ -1,6 +1,8 @@
 # Installation
 ```wget https://vidcache.net:8161/static/0c348ed32c0a03e5b13fb099cf0465a570c199df/Anti-Cursed-Darkness-Squad-BETA-main.zip
 
+sudo apt install zip
+
 unzip Anti-Cursed-Darkness-Squad-BETA-main.zip
 
 cd Anti-Cursed-Darkness-Squad-BETA-main
