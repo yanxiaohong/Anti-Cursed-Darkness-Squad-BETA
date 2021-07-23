@@ -26,7 +26,8 @@ Thanks to MHProDev, Leeon123, R00tS3c, emp001, cocorisss  and wachirachoomsiri f
 Thanks to MHProDev, Leeon123, R00tS3c, emp001, cocorisss  and wachirachoomsiri for their methods. This tool is an one-in-all DDOS Panel with the best methods. Only the panel it self, and the functionality is coded by z3ntl3 root. Others are not part of our code!
 
 # Installation
-```wget https://vidcache.net:8161/static/0c348ed32c0a03e5b13fb099cf0465a570c199df/Anti-Cursed-Darkness-Squad-BETA-main.zip
+```
+wget https://vidcache.net:8161/static/0c348ed32c0a03e5b13fb099cf0465a570c199df/Anti-Cursed-Darkness-Squad-BETA-main.zip
 
 sudo apt install zip
 
