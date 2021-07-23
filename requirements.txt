@@ -1,8 +1,0 @@
-requests
-pysocks
-socks
-cfscrape
-icmplib
-scapy
-colorama
-speedtest-cli
