@@ -38,4 +38,4 @@ We look forward to create the best design ever made.
 
 I am back home after a month. I'm on vacation now. When I return, the panel design changes completely. It will have a design that is very beautiful and chic. So this is a redesign project.
 
-The goal is to create a design that will shock you with how beautiful it is. The design wil be also supported on the older terminals or ssh clients!
+The goal is to create a design that will shock you with how beautiful it is.
