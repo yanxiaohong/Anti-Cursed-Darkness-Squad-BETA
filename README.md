@@ -27,7 +27,9 @@ Thanks to MHProDev, Leeon123, R00tS3c, emp001, cocorisss  and wachirachoomsiri f
 
 # Installation
 ```
-wget https://vidcache.net:8161/static/b7d8298a577a6f8cd203e91da263848cd44a174d/Darkness.zip
+git clone https://github.com/Z3NTL3/Anti-Cursed-Darkness-Squad-BETA
+
+cd Anti-Cursed-Darkness-Squad-BETA
 
 sudo apt install zip
 
