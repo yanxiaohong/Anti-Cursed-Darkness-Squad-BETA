@@ -27,9 +27,9 @@ Thanks to MHProDev, Leeon123, R00tS3c, emp001, cocorisss  and wachirachoomsiri f
 
 # Installation
 ```
-git clone https://github.com/Z3NTL3/Anti-Cursed-Darkness-Squad-BETA
+git clone https://github.com/Z3NTL3/Anti-Cursed-Darkness-Squad-BETA/
 
-cd Anti-Cursed-Darkness-Squad-BETA
+cd Anti-Cursed-Darkness-Squad-BETA/
 
 sudo apt install zip
 
