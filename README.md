@@ -34,8 +34,34 @@ git clone https://github.com/Z3NTL3/Anti-Cursed-Darkness-Squad-BETA && cd Anti-C
 https://scorpion-hackz.com/acds/update-log.txt
 
 # Feauture Update
-We look forward to create the best design ever made.
+Darkness v8
 
-I am back home after a month. I'm on vacation now. When I return, the panel design changes completely. It will have a design that is very beautiful and chic. So this is a redesign project.
+- Proxy API will be increased by +200%, up to 4 APIs from 2.
 
-The goal is to create a design that will shock you with how beautiful it is.
+- New licensing
+
+- Will be never down again because of downtime Proxy APIs
+
+- Very powerful method-combiner trick "atom-vip" 200k RQPS  for 24+ hours attack
+
+- Design change (maybe in Darkness v8 or v8.5)
+
+- Custom proxy mode support
+
+New ideas we realised and we are going to add
+
+- New design in any method run
+
+- Animated ASCII
+
+- General design changes
+
+- Speeding up the load speed
+
+- Hiding the outputs
+
+- Method combiner 4x
+
+- Methods will be in  /methods folder
+
+- On Darkness V9 you can add your own method via our DATABASE Connection and make it save in your own darkness and run it easly
