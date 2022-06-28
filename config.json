@@ -1,3 +1,4 @@
 {
-    "filename_limiter": "ulimit.sh"
+    "filename_limiter": "ulimit.sh",
+    "twofactor": "disabled"
 }

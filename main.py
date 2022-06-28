@@ -7,6 +7,7 @@ import auth.twofactorAUTH
 import time
 import os
 import platform, json
+import socket
 
 '''
 An improved version of the old ACDS. 
@@ -17,6 +18,12 @@ Please use a spoof for the best experience.
 '''
 
 SECRET = auth.twofactorAUTH.SECRETKEY_AT_LOAD
+CURSOR = f"\n\033[38;5;129m╔\033[38;5;128m═\033[38;5;123m[\033[38;5;125m{os.getcwd()}\033[38;5;123m]\033[38;5;128m-\033[38;5;123m[\033[38;5;127m{socket.gethostname()}\033[38;5;123m]\n\033[38;5;129m╚══\033[38;5;128m══\033[38;5;124m➤ \033[38;5;123m"
+
+class AvailableMethods:
+    # The only method I (aka Z3NTL3) have developed is in `my_l4` folder and is called z3slam in the panel.
+    Layer4 = ['z3slam'] # This is
+    Layer7 = ['ultra-bypass','http-nuke'] # These methods arent mine
 
 def Validate(inputCode):
    val = auth.twofactorAUTH.PinAuthorization(inputCode, SECRET).Validate()
@@ -59,6 +66,47 @@ def BeginScreen():
     if inputWaitable:
         return
 
+def Error(msg):
+    sys.stdout.flush()
+    sys.stdout.write(f"\n\033[31m[ \033[0mError \033[31m]\033[0m: \033[31m{msg}\033[0m\n")
+
+def PentestHub():
+    hubMenu = """ 
+      \033[38;5;129m╔═══════════════\033[38;5;127m═════════════\033[38;5;124m➤
+      \033[38;5;129m║ \033[38;5;123mOptions\033[38;5;124m:
+      \033[38;5;129m║      \033[38;5;124m1 \033[38;5;124m- \033[38;5;123mlayer7
+      \033[38;5;129m║      \033[38;5;124m2 \033[38;5;124m- \033[38;5;123mlayer4 
+      \033[38;5;129m║      \033[38;5;124m3 \033[38;5;124m- \033[38;5;123mtools
+      \033[38;5;129m╚═══\033[38;5;127m══════════\033[38;5;124m➤"""
+    hub = LOGO +'\n'+ hubMenu
+    
+    sys.stdout.flush()
+    sys.stdout.write(hub)
+    sys.stdout.write('\n'*3)
+    
+    hubLoop = True
+    
+    while hubLoop:
+        try:
+            option = input(CURSOR).lower()
+
+            if argv.__len__() == 1:
+                if option == "exit" or option == "close":
+                    sys.exit('\033[31mExited ACDS.\033[0m\n')
+                if option == "back" or option == "return" or option == "menu":
+                    pass
+            elif argv.__len__() == 3:
+                argv = option.split(' ')
+                pass
+            elif argv.__len__() == 4:
+                argv = option.split(' ')
+                pass
+            else:
+                Error("Command not found")
+
+        except Exception as e: 
+            print(e)
+
 def Clear():
     PIPE = subprocess.PIPE
     cmd = subprocess.run('clear', shell=True, stderr=PIPE)
@@ -97,5 +145,6 @@ class HubScripts:
     pass
 
 if __name__ == '__main__':
-    Clear()
-    BeginScreen()
+    # Clear()
+    # BeginScreen()
+    PentestHub()
