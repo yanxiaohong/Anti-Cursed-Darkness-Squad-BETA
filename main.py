@@ -1,4 +1,3 @@
-
 import httpx
 import sys,subprocess
 from concurrent.futures import Future
@@ -67,6 +66,20 @@ def Keys():
     with open(os.getcwd()+"\\keys\\pub.pem","a+") as file:
         file.write(str(public))
 
+def LoadKeys():
+    pubx = None
+    privx = None
+
+    with open(os.getcwd()+"\\keys\\priv.pem","rb") as file:
+        privx = file.read().decode('utf-8')
+    
+    with open(os.getcwd()+"\\keys\\pub.pem","rb") as file:
+        pubx = file.read().decode('utf-8')
+    
+    publicKey = rsa.key.PublicKey(pubx.split('PublicKey(')[1], pubx.split('PublicKey(')[1].split(',')[1].replace(')','').strip())
+    privateKey = rsa.key.PrivateKey(int(privx.split('PrivateKey(')[1].split(',')[0].strip()), int(privx.split('PrivateKey(')[1].split(',')[1].strip()), int(privx.split('PrivateKey(')[1].split(',')[2].strip()), int(privx.split('PrivateKey(')[1].split(',')[3].strip()), int(privx.split('PrivateKey(')[1].split(',')[4].replace(')','').strip()))
+
+    return [publicKey,privateKey]    
 def CurrentDate():
     today = date.today()
     d1 = today.strftime("%d/%m/%Y %H:%M:%S")
@@ -267,5 +280,8 @@ if __name__ == '__main__':
     TwoFactorQR()
     # Clear()
     # BeginScreen()
-    # PentestHub()
+    #PentestHub()
     #print(SECRET)
+    Keys()
+    LoadKeys()
+
