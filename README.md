@@ -2,7 +2,7 @@
 Easy-to-use DDOS panel for educational and pentest purposes. Renewed Anti-Cursed-Darkness-Squad panel.
 
 <br>
-`` UNDER DEVELOPMENT NOT DONE `` <br>
+``UNDER DEVELOPMENT NOT DONE`` <br>
 **Follow the development process from here**
 
 ### About
