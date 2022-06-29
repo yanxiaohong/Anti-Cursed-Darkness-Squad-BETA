@@ -3,7 +3,6 @@ import sys,subprocess
 from concurrent.futures import Future
 from concurrent.futures import as_completed
 from concurrent.futures import ThreadPoolExecutor
-from concurrent.futures import ProcessPoolExecutor
 import auth.twofactorAUTH
 import time
 import os
@@ -11,6 +10,7 @@ import platform, json
 import socket
 import rsa 
 from datetime import date
+import threading
 import keyboard
 
 '''
@@ -34,14 +34,14 @@ class AvailableMethods:
     Layer7 = ['ultra-bypass','http-nuke','http-get','http-post'] # These methods arent mine
     Tools = ['speedtest']
 
-class Encryption:
+class Encryption():
     # Always encrypt logs, logs can only be viewed from 'log_viewer.py'
-    def __init__(obj):
+    def __init__(self,obj):
         self.obj = obj
-    def Encrypt():
+    def Encrypt(self):
         encrypted_content = rsa.encrypt(self.obj.encode('utf-8'), public)
         return encrypted_content
-    def Decrypt():
+    def Decrypt(self):
         decrypted_content = rsa.decrypt(self.obj.encode('utf-8'),private)
         return decrypted_content
 class Logger:
@@ -246,4 +246,4 @@ if __name__ == '__main__':
     # Clear()
     # BeginScreen()
     # PentestHub()
-    pass    
+    pass
