@@ -27,6 +27,7 @@ HOSTNAME = socket.gethostname()
 IP = rsa.encrypt(socket.gethostbyname(HOSTNAME).encode('utf-8'),public)
 SECRET = auth.twofactorAUTH.SECRETKEY_AT_LOAD
 CURSOR = f"\n\033[38;5;129m╔\033[38;5;128m═\033[38;5;123m[\033[38;5;125m{os.getcwd()}\033[38;5;123m]\033[38;5;128m-\033[38;5;123m[\033[38;5;127m{socket.gethostname()}\033[38;5;123m]\n\033[38;5;129m╚══\033[38;5;128m══\033[38;5;124m➤ \033[38;5;123m"
+TOTP = auth.twofactorAUTH.PinAuthorization.TOTP(auth.twofactorAUTH.Decrypt(SECRET))
 
 class AvailableMethods:
     # The only method I (aka Z3NTL3) have developed is in `my_l4` folder and is called z3slam in the panel.
@@ -246,4 +247,4 @@ if __name__ == '__main__':
     # Clear()
     # BeginScreen()
     # PentestHub()
-    pass
+    print(TOTP)
