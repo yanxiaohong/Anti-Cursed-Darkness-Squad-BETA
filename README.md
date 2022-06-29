@@ -1,8 +1,15 @@
 ### Anti-Cursed-Darkness-Squad
 Easy-to-use DDOS panel for educational and pentest purposes. Renewed Anti-Cursed-Darkness-Squad panel.
+`` UNDER DEVELOPMENT NOT DONE ``
 
 ### About
 Anti Cursed Darkness Squad is a panel that runs pub/private scripts on your machine and amplifies them through multiple scripts combination and then the combination in multi-processing. The only method I programmed myself is: z3slam.py.
+
+### Features
+- Local Logging System is Encrypted in ``RSA ALGORITHM``.
+- Inbuild-tools.
+- Multi-Processed Method Combiner System.
+- 2FA (can be enabled from config.json).
 
 
 ### Story
@@ -12,8 +19,3 @@ I often got DMs from people they always say where is ACDS? Every time I heard th
 
 This was actually my principle to current and driven programming. Every programmer starts first at A no one can get to Z right away. ACDS was my principle too. My motivation source to continue growing. And I succeeded.
 
-### Features
-- Local Logging System is Encrypted in ``RSA ALGORITHM``.
-- Inbuild-tools.
-- Multi-Processed Method Combiner System.
-- 2FA (can be enabled from config.json).
