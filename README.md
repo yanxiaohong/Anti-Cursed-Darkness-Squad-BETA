@@ -14,7 +14,7 @@ Anti Cursed Darkness Squad is a panel that runs pub/private scripts on your mach
 - Generate QRCode from the generated TOTP
 
 ### Story
-A 4 year old project which was my principle with programming and so the gleam of an amateur. This was a project I had developed in my skiddie days. I was hugely amateur and bad at programming. I didn't know one concept or algorithm. 
+A 4 year old project which was my principle with programming and so the gleam of an amateur (back then). This was a project I had developed in my skiddie days. I was hugely amateur and bad at programming. I didn't know one concept or algorithm. 
 
 I often got DMs from people they always say where is ACDS? Every time I heard that question I was embarrassed because it was a very amateur project. The source was so sh*t. 
 
