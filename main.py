@@ -33,7 +33,7 @@ class AvailableMethods:
     # The only method I (aka Z3NTL3) have developed is in `my_l4` folder and is called z3slam in the panel.
     Layer4 = ['z3slam'] # This is
     Layer7 = ['ultra-bypass','http-nuke','http-get','http-post'] # These methods arent mine
-    Tools = ['speedtest']
+    Tools = ['speedtest','crawl-proxy']
 
 class Encryption():
     # Always encrypt logs, logs can only be viewed from 'log_viewer.py'
@@ -78,7 +78,6 @@ def LoadKeys():
     
     publicKey = rsa.key.PublicKey(pubx.split('PublicKey(')[1], pubx.split('PublicKey(')[1].split(',')[1].replace(')','').strip())
     privateKey = rsa.key.PrivateKey(int(privx.split('PrivateKey(')[1].split(',')[0].strip()), int(privx.split('PrivateKey(')[1].split(',')[1].strip()), int(privx.split('PrivateKey(')[1].split(',')[2].strip()), int(privx.split('PrivateKey(')[1].split(',')[3].strip()), int(privx.split('PrivateKey(')[1].split(',')[4].replace(')','').strip()))
-
     return [publicKey,privateKey]    
 def CurrentDate():
     today = date.today()
