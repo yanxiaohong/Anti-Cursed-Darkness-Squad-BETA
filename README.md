@@ -6,7 +6,7 @@ Easy-to-use DDOS panel for educational and pentest purposes. Renewed Anti-Cursed
 **Follow the development process from here**
 
 ### About
-Anti Cursed Darkness Squad is a panel that runs pub/private scripts on your machine and amplifies them through multiple scripts combination wit multi-processing. The only method I programmed myself is: z3slam.py.
+Anti Cursed Darkness Squad is a panel that runs pub/private scripts on your machine and amplifies them through multiple scripts combination through multi-processed threads. The only method I programmed myself is: z3slam.py.
 
 ### Features
 - Local Logging System is Encrypted in ``RSA ALGORITHM``.
