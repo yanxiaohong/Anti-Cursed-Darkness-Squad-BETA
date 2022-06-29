@@ -11,3 +11,9 @@ A 4 year old project which was my principle with programming and so the gleam of
 I often got DMs from people they always say where is ACDS? Every time I heard that question I was embarrassed because it was a very amateur project. The source was so sh*t. 
 
 This was actually my principle to current and driven programming. Every programmer starts first at A no one can get to Z right away. ACDS was my principle too. My motivation source to continue growing. And I succeeded.
+
+### Features
+- Local Logging System is Encrypted in ``RSA ALGORITHM``.
+- Inbuild-tools.
+- Multi-Processed Method Combiner System.
+- 2FA (can be enabled from config.json).
