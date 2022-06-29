@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import pyotp
 import rsa 
 
@@ -56,4 +55,3 @@ SECRETKEY_AT_LOAD = rsa.encrypt(PinAuthorization.GenerateSecretKey().encode('utf
 
 def Decrypt(secret):
     return rsa.decrypt(secret, priv).decode('utf-8')
->>>>>>> 35adf9ecbc322a56ab3744cda80802048ac0c0b8
