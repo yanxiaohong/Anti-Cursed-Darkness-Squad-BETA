@@ -1,4 +1,5 @@
 import pyotp
+import rsa 
 
 class PinAuthorization():
     def __init__(self, pincodeInput,secret):
@@ -15,4 +16,8 @@ class PinAuthorization():
         totp = pyotp.TOTP(self.secret)
         return totp.verify(pincode)
         
-SECRETKEY_AT_LOAD = PinAuthorization.GenerateSecretKey()
+pub,priv= rsa.newkeys(600)
+SECRETKEY_AT_LOAD = rsa.encrypt(PinAuthorization.GenerateSecretKey().encode('utf-8'),pub)
+
+def Decrypt(secret):
+    return rsa.decrypt(secret, priv).decode('utf-8')
