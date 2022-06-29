@@ -15,6 +15,11 @@ class PinAuthorization():
 
         totp = pyotp.TOTP(self.secret)
         return totp.verify(pincode)
+    @staticmethod
+    def TOTP(secret):
+        totp = pyotp.totp.TOTP(secret).provisioning_uri(name='ACDS', issuer_name='ACDS Panel')
+        return totp
+
         
 pub,priv= rsa.newkeys(600)
 SECRETKEY_AT_LOAD = rsa.encrypt(PinAuthorization.GenerateSecretKey().encode('utf-8'),pub)
