@@ -12,7 +12,7 @@ import rsa
 from datetime import date
 import threading
 import keyboard
-
+import qrcode
 '''
 An improved version of the old ACDS. 
 
@@ -27,6 +27,7 @@ HOSTNAME = socket.gethostname()
 IP = rsa.encrypt(socket.gethostbyname(HOSTNAME).encode('utf-8'),public)
 SECRET = auth.twofactorAUTH.SECRETKEY_AT_LOAD
 CURSOR = f"\n\033[38;5;129m╔\033[38;5;128m═\033[38;5;123m[\033[38;5;125m{os.getcwd()}\033[38;5;123m]\033[38;5;128m-\033[38;5;123m[\033[38;5;127m{socket.gethostname()}\033[38;5;123m]\n\033[38;5;129m╚══\033[38;5;128m══\033[38;5;124m➤ \033[38;5;123m"
+TOTP = auth.twofactorAUTH.PinAuthorization.TOTP(auth.twofactorAUTH.Decrypt(SECRET))
 
 class AvailableMethods:
     # The only method I (aka Z3NTL3) have developed is in `my_l4` folder and is called z3slam in the panel.
@@ -34,14 +35,14 @@ class AvailableMethods:
     Layer7 = ['ultra-bypass','http-nuke','http-get','http-post'] # These methods arent mine
     Tools = ['speedtest']
 
-class Encryption:
+class Encryption():
     # Always encrypt logs, logs can only be viewed from 'log_viewer.py'
-    def __init__(obj):
+    def __init__(self,obj):
         self.obj = obj
-    def Encrypt():
+    def Encrypt(self):
         encrypted_content = rsa.encrypt(self.obj.encode('utf-8'), public)
         return encrypted_content
-    def Decrypt():
+    def Decrypt(self):
         decrypted_content = rsa.decrypt(self.obj.encode('utf-8'),private)
         return decrypted_content
 class Logger:
@@ -51,6 +52,20 @@ class Logger:
             content = Encryption(msg).Encrypt()
             file.write(content)
         return
+
+def Keys():
+    if os.path.exists(os.getcwd()+"\\keys\\priv.pem"):
+        os.remove(os.getcwd()+"\\keys\\priv.pem")
+
+    if os.path.exists(os.getcwd()+"\\keys\\pub.pem"):
+        os.remove(os.getcwd()+"\\keys\\pub.pem")
+
+    with open(os.getcwd()+"\\keys\\priv.pem","a+") as file:
+        file.write(str(private))
+    
+    with open(os.getcwd()+"\\keys\\pub.pem","a+") as file:
+        file.write(str(public))
+
 def CurrentDate():
     today = date.today()
     d1 = today.strftime("%d/%m/%Y %H:%M:%S")
@@ -195,6 +210,11 @@ def CheckOS():
     else:
         sys.exit('\033[31mPlatform Unsupported: You require a linux OS.\033[0m\n')
 
+def TwoFactorQR():
+    qrcodeIMG = qrcode.make(TOTP)
+    if os.path.exists('auth.png'):
+        os.remove('auth.png')
+    qrcodeIMG.save(os.getcwd()+"\\auth.png")
 class Tools:
     def SpeedTest():
         command = 'speedtest'
@@ -243,7 +263,8 @@ class HubScripts:
     pass
 
 if __name__ == '__main__':
+    TwoFactorQR()
     # Clear()
     # BeginScreen()
-    # PentestHub()
-    pass    
+    PentestHub()
+    #print(SECRET)
