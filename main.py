@@ -12,7 +12,7 @@ import rsa
 from datetime import date
 import threading
 import keyboard
-
+import qrcode
 '''
 An improved version of the old ACDS. 
 
@@ -196,6 +196,11 @@ def CheckOS():
     else:
         sys.exit('\033[31mPlatform Unsupported: You require a linux OS.\033[0m\n')
 
+def TwoFactorQR():
+    qrcodeIMG = qrcode.make(TOTP)
+    if os.path.exists('auth.png'):
+        os.remove('auth.png')
+    qrcodeIMG.save(os.getcwd()+"\\auth.png")
 class Tools:
     def SpeedTest():
         command = 'speedtest'
@@ -244,7 +249,8 @@ class HubScripts:
     pass
 
 if __name__ == '__main__':
+    TwoFactorQR()
     # Clear()
     # BeginScreen()
     # PentestHub()
-    print(TOTP)
+    print(SECRET)
