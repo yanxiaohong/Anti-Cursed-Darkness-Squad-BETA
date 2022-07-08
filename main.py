@@ -25,7 +25,7 @@ Please use a spoof for the best experience.
 public, private = rsa.newkeys(612)
 
 HOSTNAME = socket.gethostname()
-IP = rsa.encrypt(socket.gethostbyname(HOSTNAME).encode('utf-8'),public)
+IP = None
 SECRET = auth.twofactorAUTH.SECRETKEY_AT_LOAD
 CURSOR = f"\n\033[38;5;129m╔\033[38;5;128m═\033[38;5;123m[\033[38;5;125m{os.getcwd()}\033[38;5;123m]\033[38;5;128m-\033[38;5;123m[\033[38;5;127m{socket.gethostname()}\033[38;5;123m]\n\033[38;5;129m╚══\033[38;5;128m══\033[38;5;124m➤ \033[38;5;123m"
 TOTP = auth.twofactorAUTH.PinAuthorization.TOTP(auth.twofactorAUTH.Decrypt(SECRET))
@@ -87,7 +87,7 @@ def Keys():
 
 def RSA_func():
     # Load From file
-    global private,public
+    global private,public, IP
     existance = RSA_Existance()
 
     if existance == False:
@@ -100,6 +100,7 @@ def RSA_func():
         with open(os.getcwd()+"\\keys\\pub.pem","rb") as publicfile:
             pubdata = publicfile.read()
         public = rsa.PublicKey.load_pkcs1(pubdata,'PEM')
+    IP = rsa.encrypt(socket.gethostbyname(HOSTNAME).encode('utf-8'),public)
 
 def CurrentDate():
     today = date.today()
