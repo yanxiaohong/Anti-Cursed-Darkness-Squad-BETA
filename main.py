@@ -36,6 +36,13 @@ class AvailableMethods:
     Layer7 = ['ultra-bypass','http-nuke','http-get','http-post'] # These methods arent mine
     Tools = ['speedtest','crawl-proxy']
 
+class Encryptor:
+    # RSA_func function should be called first before this in the application once time. (at startup)
+    def Encrypt(msg):
+        return rsa.encrypt(msg.encode('utf-8'), public)
+    def Decrypt(encrypted_data):
+        return rsa.decrypt(encrypted_data, private)
+
 def RSA_Existance():
     # Check if already RSA key and priv pem's exists
     pub_existance = True
@@ -304,3 +311,4 @@ if __name__ == '__main__':
     #print(SECRET)
     RSA_func()
     #Keys()
+
