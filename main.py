@@ -3,6 +3,7 @@ import sys,subprocess
 from concurrent.futures import Future
 from concurrent.futures import as_completed
 from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ProcessPoolExecutor
 import auth.twofactorAUTH
 import time
 import os
@@ -35,25 +36,36 @@ class AvailableMethods:
     Layer7 = ['ultra-bypass','http-nuke','http-get','http-post'] # These methods arent mine
     Tools = ['speedtest','crawl-proxy']
 
-class Encryption():
-    # Always encrypt logs, logs can only be viewed from 'log_viewer.py'
-    def __init__(self,obj):
-        self.obj = obj
-    def Encrypt(self):
-        encrypted_content = rsa.encrypt(self.obj.encode('utf-8'), public)
-        return encrypted_content
-    def Decrypt(self):
-        decrypted_content = rsa.decrypt(self.obj.encode('utf-8'),private)
-        return decrypted_content
-class Logger:
-    def AddLog(msg):
-        msg = f"{CurrentDate()} {msg}\n"
-        with open("logs\log.txt","a+")as file:
-            content = Encryption(msg).Encrypt()
-            file.write(content)
-        return
+def RSA_Existance():
+    # Check if already RSA key and priv pem's exists
+    pub_existance = True
+    priv_existance = True
+
+    if os.path.exists(os.getcwd()+"\\keys\\priv.pem"):
+        with open(os.getcwd()+"\\keys\\priv.pem",'r')as file:
+            if 'BEGIN RSA PRIVATE KEY' and 'END RSA PRIVATE KEY' in file.read():
+                pass
+            else:
+                priv_existance = False
+    else:
+        priv_existance = False
+
+    if os.path.exists(os.getcwd()+"\\keys\\pub.pem"):
+        with open(os.getcwd()+"\\keys\\pub.pem",'r')as file:
+            if 'BEGIN RSA PUBLIC KEY' and 'END RSA PUBLIC KEY' in file.read():
+                pass
+            else:
+                pub_existance = False
+    else:
+        pub_existance = False
+
+    if pub_existance and priv_existance == True:
+        return True
+    else:
+        return False
 
 def Keys():
+    # Create priv and pub pems if dont exists
     if os.path.exists(os.getcwd()+"\\keys\\priv.pem"):
         os.remove(os.getcwd()+"\\keys\\priv.pem")
 
@@ -61,24 +73,27 @@ def Keys():
         os.remove(os.getcwd()+"\\keys\\pub.pem")
 
     with open(os.getcwd()+"\\keys\\priv.pem","a+") as file:
-        file.write(str(private))
+        file.write(private.save_pkcs1('PEM').decode('utf-8'))
     
     with open(os.getcwd()+"\\keys\\pub.pem","a+") as file:
-        file.write(str(public))
+        file.write(public.save_pkcs1('PEM').decode('utf-8'))
 
-def LoadKeys():
-    pubx = None
-    privx = None
+def RSA_func():
+    # Load From file
+    global private,public
+    existance = RSA_Existance()
 
-    with open(os.getcwd()+"\\keys\\priv.pem","rb") as file:
-        privx = file.read().decode('utf-8')
-    
-    with open(os.getcwd()+"\\keys\\pub.pem","rb") as file:
-        pubx = file.read().decode('utf-8')
-    
-    publicKey = rsa.key.PublicKey(pubx.split('PublicKey(')[1], pubx.split('PublicKey(')[1].split(',')[1].replace(')','').strip())
-    privateKey = rsa.key.PrivateKey(int(privx.split('PrivateKey(')[1].split(',')[0].strip()), int(privx.split('PrivateKey(')[1].split(',')[1].strip()), int(privx.split('PrivateKey(')[1].split(',')[2].strip()), int(privx.split('PrivateKey(')[1].split(',')[3].strip()), int(privx.split('PrivateKey(')[1].split(',')[4].replace(')','').strip()))
-    return [publicKey,privateKey]    
+    if existance == False:
+        Keys()
+    else:
+        with open(os.getcwd()+"\\keys\\priv.pem","rb") as privatefile:
+            keydata = privatefile.read()
+        private = rsa.PrivateKey.load_pkcs1(keydata,'PEM')
+
+        with open(os.getcwd()+"\\keys\\pub.pem","rb") as publicfile:
+            pubdata = publicfile.read()
+        public = rsa.PublicKey.load_pkcs1(pubdata,'PEM')
+
 def CurrentDate():
     today = date.today()
     d1 = today.strftime("%d/%m/%Y %H:%M:%S")
@@ -272,15 +287,20 @@ class Tools:
 
         return [stdout,stderr]
 
-class HubScripts:
-    pass
-
+class HubScripts():
+    def __init__(self,command):
+        self.command = command
+    def HTTP_GET(self):
+        pass
+    def HTTP_POST(self):
+        pass
+    def ULTRA_BYPASS(self):
+        pass
 if __name__ == '__main__':
-    TwoFactorQR()
+    #TwoFactorQR()
     # Clear()
     # BeginScreen()
     #PentestHub()
     #print(SECRET)
-    Keys()
-    LoadKeys()
-
+    RSA_func()
+    #Keys()
