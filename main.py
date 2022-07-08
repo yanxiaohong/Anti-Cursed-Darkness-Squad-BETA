@@ -14,6 +14,7 @@ from datetime import date
 import threading
 import keyboard
 import qrcode
+import csv
 '''
 An improved version of the old ACDS. 
 
@@ -33,8 +34,9 @@ TOTP = auth.twofactorAUTH.PinAuthorization.TOTP(auth.twofactorAUTH.Decrypt(SECRE
 class AvailableMethods:
     # The only method I (aka Z3NTL3) have developed is in `my_l4` folder and is called z3slam in the panel.
     Layer4 = ['z3slam'] # This is
-    Layer7 = ['ultra-bypass','http-nuke','http-get','http-post'] # These methods arent mine
-    Tools = ['speedtest','crawl-proxy']
+    Layer7 = ['ultra-bypass','http-nuke','http-get','http-post','mproc-combiner'] # These methods arent mine
+    Tools = ['speedtest','crawl-proxy','history']
+    # history cmd is a history of the sites you have pentested. It is read and written by csv
 
 class Encryptor:
     # RSA_func function should be called first before this in the application once time. (at startup)
